@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 08:39:11 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/09 20:04:41 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/09 20:42:56 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,10 @@ void Phonebook::get_contact(int index) {
 }
 
 void	Phonebook::displayContact() {
-    const int MAX_DISPLAY = 8;
     std::cout << "Index | First name   | Last name    | Nickname" << std::endl;
     std::cout << "---------------------------------------------" << std::endl;
-    for (int i = 0; i < std::min(m_max_contacts, MAX_DISPLAY); i++) {
-        Contact& contact = m_contacts[i];
+    for (int i = 0; i < std::min(m_max_contacts, MAX); i++) {
+        Contact& contact = this->m_contacts[i];
         std::cout << std::setw(5) << i << " | ";
         std::cout << std::setw(12) << std::left << contact.getFirstName().substr(0, 10) << " | ";
         std::cout << std::setw(12) << std::left << contact.getLastName().substr(0, 10) << " | ";
