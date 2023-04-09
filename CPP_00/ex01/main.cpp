@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 08:39:05 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/09 17:55:05 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/10 00:31:35 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-/*
-	check if no contact is added what happens
-*/
+
 std::string strUpper(std::string str) {
 	for (std::string::size_type i = 0; i < str.length(); i++)
 		str[i] = toupper(str[i]);
