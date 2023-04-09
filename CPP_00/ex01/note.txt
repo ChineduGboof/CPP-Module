@@ -1,0 +1,64 @@
+To complete this exercise, you will need to create two classes: PhoneBook and Contact.
+
+PhoneBook will be responsible for storing and managing a maximum of 8 contacts.
+If the user tries to add a 9th contact, the oldest one will be replaced by the new one.
+
+Contact will represent a single contact in the phone book and will have fields for 
+first name, last name, nickname, phone number, and darkest secret.
+
+You will also need to implement the following functionality:
+
+When the program starts up, the phone book should be empty, and the user 
+should be prompted to enter one of three commands: ADD, SEARCH, or EXIT.
+
+If the user enters ADD, they should be prompted to input the information 
+for a new contact one field at a time. Once all the fields have been completed, 
+the contact should be added to the phone book.
+
+If the user enters SEARCH, the program should display the saved contacts 
+as a list of 4 columns: index, first name, last name, and nickname. 
+Each column should be 10 characters wide, and if the text is longer than the column, 
+it should be truncated and replaced by a dot.
+
+The user should then be prompted to enter the index of the contact they want to display. 
+If the index is out of range or invalid, the program should handle the error in a relevant way. 
+Otherwise, the program should display the contact information, one field per line.
+
+If the user enters EXIT, the program should quit and the contacts should be lost forever.
+
+Any other input should be discarded.
+
+Note that dynamic allocation is forbidden.
+
+You can use the std::string class to store strings.
+
+STEPS:
+
+Design the classes: Start by designing the Contact and PhoneBook classes, 
+keeping in mind the requirements and restrictions mentioned in the project description. 
+Define the necessary data members and member functiu no wanons, and decide on their access levels (public or private).
+
+Implement the classes: Write the code for the member functions of the Contact and PhoneBook classes. 
+Remember to adhere to good programming practices, such as writing modular and reusable code, 
+commenting your code, and handling errors and edge cases.
+
+Write the main program: Write the main program that will instantiate a PhoneBook object 
+and interact with the user through the command line. The program should display a menu 
+with options for adding a new contact, searching for a contact, and exiting the program. 
+Use the member functions of the PhoneBook and Contact classes to perform the required operations.
+
+Test the program: Test the program thoroughly to ensure that it works correctly 
+under all possible scenarios. Try adding, searching, and deleting contacts, 
+as well as handling edge cases such as invalid input or exceeding the maximum number of contacts.
+
+#include <iostream>
+#include <string>
+
+std::string str1 = "hello";
+std::string str2 = "world";
+
+if (str1.compare(str2) == 0) {
+    std::cout << "The strings are the same." << std::endl;
+} else {
+    std::cout << "The strings are different." << std::endl;
+}
