@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 08:39:05 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/09 13:04:39 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/09 17:55:05 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(void) {
 	signal(SIGQUIT, SIG_IGN);
 
 	std::cout << BLUE WELCOME DEFAULT << std::endl;
-	while (std::cout << "To do: " && std::getline(std::cin, todo)) {
+	while (std::cout << "PhoneBook📞: " && std::getline(std::cin, todo)) {
 		if (!strUpper(todo).compare("ADD")) {
 			std::cout << GREEN ADD DEFAULT << std::endl;
 			phonelist.addContact();

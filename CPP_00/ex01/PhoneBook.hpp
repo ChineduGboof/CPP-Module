@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 08:39:14 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/09 13:18:00 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/09 20:02:28 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <cstdlib>
 #include <iomanip>
 #include <csignal>
+#include <sstream>
 #include "Contact.hpp"
 
 /*	#	Color Codes	#	*/
@@ -43,13 +44,14 @@
 class Phonebook {
 private:
 		Contact m_contacts[8];
-		int		m_index;
+		int		m_max_contacts;
+		void 	get_contact(int index);
 public:
 		Phonebook();
 		~Phonebook();
 
-		bool	addContact();
-		bool	displayContact();
+		void	addContact();
+		void	displayContact();
 };
 
 #endif

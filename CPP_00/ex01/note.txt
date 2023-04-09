@@ -51,14 +51,14 @@ Test the program: Test the program thoroughly to ensure that it works correctly
 under all possible scenarios. Try adding, searching, and deleting contacts, 
 as well as handling edge cases such as invalid input or exceeding the maximum number of contacts.
 
-#include <iostream>
-#include <string>
 
-std::string str1 = "hello";
-std::string str2 = "world";
 
-if (str1.compare(str2) == 0) {
-    std::cout << "The strings are the same." << std::endl;
-} else {
-    std::cout << "The strings are different." << std::endl;
+bool	Phonebook::addContact() {
+	if (this->m_index >= 0 && this->m_index <= 8) {
+		this->m_index++;
+		return (true);
+	} else {
+		std::cout << RED "Contact list not Updated!" DEFAULT << std::endl;
+		return (false);
+	}
 }
