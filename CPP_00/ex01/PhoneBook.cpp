@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 08:39:11 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/09 20:42:56 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/10 00:27:08 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void Phonebook::addContact() {
 
 void Phonebook::get_contact(int index) {
     if (index < 0 || index >= m_max_contacts) {
-        std::cout << "Error: Invalid index" << std::endl;
+        std::cout << RED "Error: Invalid index" DEFAULT<< std::endl;
         return;
     }
     
@@ -69,15 +69,14 @@ void	Phonebook::displayContact() {
     
     int index = -1;
     while (true) {
-        std::cout << "Enter index of contact to display: ";
+        std::cout << CYAN "Enter index of contact to display: " DEFAULT;
         std::string input;
         std::getline(std::cin, input);
         std::stringstream ss(input);
         if (ss >> index && index >= 0 && index < m_max_contacts) {
             break;
         }
-        std::cout << "Error: Invalid input" << std::endl;
+        std::cout << RED "Error: Invalid Index" DEFAULT<< std::endl;
     }
-    
     get_contact(index);
 };
