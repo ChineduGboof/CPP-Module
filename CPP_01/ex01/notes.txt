@@ -1,0 +1,38 @@
+The zombieHorde() function takes two arguments: an integer N 
+representing the number of zombies to create, and a string name 
+representing the name to give to each zombie. 
+The function creates a new array of N Zombie objects on 
+the heap using the new operator. It then loops through the 
+array and sets the name of each zombie to the given name 
+using the setName() function of the Zombie class. 
+Finally, the function returns a pointer to the first element of the array.
+
+The main function first sets the number of zombies to create 
+to 5 and the name to give to each zombie to "Horde Zombie". 
+It then calls the zombieHorde() function to create the horde, 
+and loops through the array of zombies, calling the announce() 
+function of each zombie to print its message. Finally, 
+the main function deletes the array of zombies using the delete[] 
+operator to free the memory allocated on the heap.
+
+Overall, this code demonstrates how to create a horde 
+of zombies using dynamic memory allocation, 
+and how to properly manage the memory to avoid memory leaks.
+
+This header file defines the Zombie class, which has a 
+private _name member variable of type std::string, 
+a default constructor, a constructor that takes a 
+std::string argument for the zombie name, a destructor, 
+and two member functions: setName() to set the zombie name, 
+and announce() to print the zombie message.
+
+This implementation defines the member functions of the Zombie class. 
+The default constructor does nothing, while the constructor that 
+takes a std::string argument sets the _name member variable to the given name. 
+The destructor prints a message indicating that the zombie has been destroyed. 
+The setName() function sets the _name member variable to the given name, 
+and the announce() function prints the zombie message.
+
+Overall, this header file and implementation define the Zombie class 
+and its member functions, which can be used 
+to create and manage zombies in a program.

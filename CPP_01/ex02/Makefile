@@ -6,13 +6,13 @@
 #    By: gboof <gboof@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/09 08:39:08 by cegbulef          #+#    #+#              #
-#    Updated: 2023/04/10 10:24:03 by gboof            ###   ########.fr        #
+#    Updated: 2023/04/10 10:56:19 by gboof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	phonebook
+NAME		=	brainz
 
-SRCS		=	main.cpp Contact.cpp PhoneBook.cpp
+SRCS		=	main.cpp
 				
 OBJS		=	$(SRCS:%cpp=%o)
 
@@ -39,11 +39,11 @@ $(NAME):	$(OBJS)
 
 clean:
 			@$(RM) $(OBJS)
-			@echo $(RED)"Deleted CPP 00 object file"$(DEFAULT)
+			@echo $(RED)"Deleted CPP 01 object file"$(DEFAULT)
 
 fclean:		clean
 			@$(RM) $(NAME)
-			@echo $(RED)"Deleted CPP 00 executable"$(DEFAULT)
+			@echo $(RED)"Deleted CPP 01 executable"$(DEFAULT)
 
 re:			fclean all
 

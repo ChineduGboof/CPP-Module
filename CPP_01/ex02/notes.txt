@@ -1,0 +1,5 @@
+This program first initializes a std::string variable str to "HI THIS IS BRAIN". It then declares a std::string pointer stringPTR and initializes it to the address of str using the & operator. Finally, it declares a std::string reference stringREF and initializes it to str.
+
+The program then prints the memory address of str, the memory address held by stringPTR, and the memory address held by stringREF. It then prints the value of str, the value pointed to by stringPTR, and the value pointed to by stringREF.
+
+By printing both the memory addresses and values of the string variable, pointer, and reference, this program demonstrates how references can be thought of as another syntax for address manipulation, but with some differences in how they are declared and used.
