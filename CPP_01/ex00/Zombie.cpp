@@ -3,23 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 20:43:47 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/10 20:43:50 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/11 00:05:07 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <iostream>
 
-Zombie::Zombie(std::string name) : _name(name) {}
-
-Zombie::~Zombie() {
-    std::cout << "<" << this->_name << "> has been destroyed" << std::endl;
+Zombie::Zombie(std::string name) {
+    this->m_name = name;
+    this->announce();
 }
 
-void Zombie::announce() const {
-    std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+Zombie::~Zombie() {
+	std::cout << RED << m_name << " has been annihilated" DEFAULT << std::endl;
+}
+
+void Zombie::announce() {
+	std::cout << GREEN << m_name << ": BraiiiiiiinnnzzzZ..." DEFAULT << std::endl;
 }
 

@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+         #
+#    By: gboof <gboof@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/10 20:43:35 by cegbulef          #+#    #+#              #
-#    Updated: 2023/04/10 20:43:41 by cegbulef         ###   ########.fr        #
+#    Updated: 2023/04/11 00:08:03 by gboof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	brainz
 
-SRCS		=	main.cpp Zombie.cpp
+SRCS		=	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 				
 OBJS		=	$(SRCS:%cpp=%o)
 

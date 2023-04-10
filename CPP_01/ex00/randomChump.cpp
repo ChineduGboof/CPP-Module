@@ -1,20 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/10 20:43:26 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/11 00:17:05 by gboof            ###   ########.fr       */
+/*   Created: 2023/04/10 22:15:08 by gboof             #+#    #+#             */
+/*   Updated: 2023/04/10 23:19:29 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main() {
-	Zombie("Zombie");
-	randomChump("Sin");
-	delete newZombie("Evil");
-	return 0;
+void randomChump(std::string name) {
+    Zombie chump = Zombie(name);
 }
