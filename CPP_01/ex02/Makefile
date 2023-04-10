@@ -3,12 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gboof <gboof@student.42.fr>                +#+  +:+       +#+         #
+#    By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/09 08:39:08 by cegbulef          #+#    #+#              #
-#    Updated: 2023/04/10 10:56:19 by gboof            ###   ########.fr        #
+#    Created: 2023/04/10 20:47:00 by cegbulef          #+#    #+#              #
+#    Updated: 2023/04/10 20:47:02 by cegbulef         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
 
 NAME		=	brainz
 
