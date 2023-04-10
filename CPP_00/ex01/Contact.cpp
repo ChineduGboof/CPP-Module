@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 08:38:59 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/09 09:50:55 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/10 14:11:18 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ std::string Contact::getLastName() {
 }
 
 std::string Contact::getNickname() {
-	return this->m_lastName;
+	return this->m_nickname;
 }
 
 std::string Contact::getPhoneNumber() {
