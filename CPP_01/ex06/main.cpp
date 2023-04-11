@@ -5,20 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 15:07:00 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/12 00:45:22 by gboof            ###   ########.fr       */
+/*   Created: 2023/04/12 00:46:13 by gboof             #+#    #+#             */
+/*   Updated: 2023/04/12 00:49:26 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main(void) {
+int main(int ac, char *argv[]) {
+	if (ac != 2) {
+		std::cout << "no enough args" << std::endl;
+		return 0;
+	}
 	Harl harl;
-    std::cout << YELLOW;
-	harl.complain("DEBUG");
-	harl.complain("INFO");
-    std::cout << RED;
-	harl.complain("WARNING");
-	harl.complain("ERROR");
-    return 0;
+	std::string level(argv[1]);
+	harl.complain(level);
 }
