@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 12:29:18 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/11 12:29:21 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/11 18:40:03 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "HumanB.hpp"
 #include <iostream>
 
-HumanB::HumanB(const std::string &name) : name(name), weapon(nullptr) {}
+HumanB::HumanB(const std::string &name) : name(name), weapon() {}
 
 void HumanB::setWeapon(const Weapon &weapon) {
     this->weapon = &weapon;
