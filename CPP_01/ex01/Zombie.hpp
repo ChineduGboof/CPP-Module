@@ -3,38 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/10 20:46:46 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/11 00:31:10 by gboof            ###   ########.fr       */
+/*   Created: 2023/04/11 10:33:53 by cegbulef          #+#    #+#             */
+/*   Updated: 2023/04/11 10:37:10 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-// #ifndef ZOMBIE_HPP
-// # define ZOMBIE_HPP
-
-// # include <string>
-
-// class Zombie {
-// public:
-//     Zombie();
-//     Zombie(std::string name);
-//     ~Zombie();
-//     void setName(std::string name);
-//     void announce() const;
-// private:
-//     std::string _name;
-// };
-
-// #endif
-
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
 
-#define DEFAULT		"\033[0m"
-#define RED			"\033[0;31m"
-#define GREEN		"\033[0;32m"
+#define DEFAULT	"\033[0m"
+#define RED 	"\e[0;31m"
+#define GREEN 	"\e[0;32m"
+#define YELLOW 	"\e[0;33m"
+#define BLUE 	"\e[0;34m"
+#define MAGENTA	"\e[0;35m"
+#define CYAN	"\e[0;36m"
+#define WHITE	"\e[0;37m"
 
 #include <iostream>
 

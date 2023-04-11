@@ -5,14 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/10 20:47:00 by cegbulef          #+#    #+#              #
-#    Updated: 2023/04/11 11:01:13 by cegbulef         ###   ########.fr        #
+#    Created: 2023/04/11 11:21:37 by cegbulef          #+#    #+#              #
+#    Updated: 2023/04/11 11:22:09 by cegbulef         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-
-NAME		=	ex02
+NAME		=	ex03
 
 SRCS		=	main.cpp
 				
