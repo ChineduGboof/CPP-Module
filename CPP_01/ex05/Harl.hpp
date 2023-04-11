@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 15:06:56 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/11 17:41:32 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/11 22:15:58 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #define HARL_HPP
 
 #include <iostream>
-#include <map>
 #include <functional>
 #include <string>
+#include <utility>
 
 #define DEFAULT	"\033[0m"
 #define RED 	"\e[0;31m"
@@ -30,7 +30,7 @@
 class Harl {
 private:
     typedef void (Harl::*FuncPtr)(void);
-    std::map<std::string, FuncPtr> levels;
+    std::pair<std::string, FuncPtr> levels[4];
 
     void debug(void);
     void info(void);
