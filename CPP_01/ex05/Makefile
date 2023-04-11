@@ -6,14 +6,14 @@
 #    By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/11 15:07:03 by cegbulef          #+#    #+#              #
-#    Updated: 2023/04/11 15:07:20 by cegbulef         ###   ########.fr        #
+#    Updated: 2023/04/11 16:43:34 by cegbulef         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME		=	ex05
 
-SRCS		=	main.cpp sed.cpp
+SRCS		=	main.cpp Harl.cpp
 				
 OBJS		=	$(SRCS:%cpp=%o)
 
