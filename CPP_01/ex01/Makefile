@@ -3,18 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+         #
+#    By: gboof <gboof@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/10 20:46:32 by cegbulef          #+#    #+#              #
-#    Updated: 2023/04/10 20:46:34 by cegbulef         ###   ########.fr        #
+#    Updated: 2023/04/11 00:28:32 by gboof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 
-NAME		=	brainz
+NAME		=	ex01
 
-SRCS		=	main.cpp Zombie.cpp
+SRCS		=	main.cpp Zombie.cpp zombieHorde.cpp
 				
 OBJS		=	$(SRCS:%cpp=%o)
 

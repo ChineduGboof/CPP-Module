@@ -6,11 +6,11 @@
 #    By: gboof <gboof@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/10 20:43:35 by cegbulef          #+#    #+#              #
-#    Updated: 2023/04/11 00:08:03 by gboof            ###   ########.fr        #
+#    Updated: 2023/04/11 00:28:45 by gboof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	brainz
+NAME		=	ex00
 
 SRCS		=	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 				
