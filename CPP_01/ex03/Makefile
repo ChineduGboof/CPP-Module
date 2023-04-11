@@ -6,14 +6,14 @@
 #    By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/11 11:21:37 by cegbulef          #+#    #+#              #
-#    Updated: 2023/04/11 11:22:09 by cegbulef         ###   ########.fr        #
+#    Updated: 2023/04/11 12:25:20 by cegbulef         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME		=	ex03
 
-SRCS		=	main.cpp
+SRCS		=	main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 				
 OBJS		=	$(SRCS:%cpp=%o)
 
@@ -32,6 +32,7 @@ MAGENTA		=	"\033[0;35m"
 %.o : %.cpp
 			@printf $(MAGENTA)
 			$(CC) $(FLAGS) -c $< -o $@
+			@printf $(DEFAULT)
 
 all:		$(NAME)
 
