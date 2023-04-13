@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 12:35:37 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/11 18:49:11 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/13 16:19:50 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 bool StringReplace::replace(const std::string& filename, const std::string& s1, const std::string& s2) {
     std::ifstream input_file(filename.c_str());
+    if (s1.empty()) {
+        return false;
+    }
     if (!input_file.is_open()) {
         return false;
     }
