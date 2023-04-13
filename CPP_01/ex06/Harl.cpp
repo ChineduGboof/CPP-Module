@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 00:46:50 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/13 10:09:35 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/13 10:20:13 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,19 @@ Harl::Harl() {
 Harl::~Harl() {}
 
 void Harl::debug() {
-	 std::cout << "DEBUG: I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!\n";
+	 std::cout << YELLOW DEBUG DEFAULT << std::endl;
 }
 
 void Harl::info() {
-	std::cout << "INFO: I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!\n";
+	std::cout << YELLOW INFO DEFAULT << std::endl;
 }
 
 void Harl::warning() {
-	std::cout << "WARNING: I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month.\n";
+	std::cout << RED WARNING DEFAULT << std::endl;
 }
 
 void Harl::error() {
-	std::cout << "ERROR: This is unacceptable! I want to speak to the manager now.\n";
+	std::cout << RED ERROR DEFAULT << std::endl;
 }
 void Harl::complain(std::string level) {
 	int i;
@@ -62,7 +62,7 @@ void Harl::complain(std::string level) {
 			(this->*fPtr[3])();
 			break;
 		default:
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			std::cout << FAIL << std::endl;
 			break;
 	}
 }
