@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 15:06:56 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/12 00:45:08 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/13 10:09:48 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,19 @@
 #define RED 	"\e[0;31m"
 #define YELLOW 	"\e[0;33m"
 
-class Harl
-{
-private:
-	void debug();
-	void info();
-	void warning();
-	void error();
-
-public:
-	Harl();
-	~Harl();
-	void complain(std::string level);
+class Harl {
+	private:
+		std::string m_level[4];
+		void debug();
+		void info();
+		void warning ();
+		void error();
+		void (Harl::*fPtr[4])();
+	public:
+		Harl();
+		~Harl();
+		void complain(std::string level);
 };
-
 #endif
 
 
