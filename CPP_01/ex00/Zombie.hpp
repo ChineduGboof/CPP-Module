@@ -6,7 +6,7 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 20:46:04 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/11 00:03:08 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/15 19:34:41 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 class Zombie {
 private:
-    std::string m_name;
+    std::string _name;
     void announce();
 
 public:
