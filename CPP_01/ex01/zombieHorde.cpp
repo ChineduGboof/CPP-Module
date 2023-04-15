@@ -6,7 +6,7 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:34:40 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/16 00:23:29 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/16 00:53:14 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Zombie *zombieHorde(int N, std::string name) {
 		return (NULL);
 	}
 	for (int i = 0; i < N; i++) {
+		horde[i].setName(name);
 		std::cout << BLUE << name << i + 1;
 		horde[i].announce();
 		std::cout << DEFAULT;

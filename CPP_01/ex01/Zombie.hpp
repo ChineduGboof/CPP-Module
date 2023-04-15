@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:33:53 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/11 10:37:10 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/16 00:50:26 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,13 @@
 #include <iostream>
 
 class Zombie {
+	private:
+    	std::string _name;
 	public:
 		Zombie();
 		~Zombie();
 		void announce();
+		void setName(std::string name);
 };
 
 Zombie *zombieHorde(int N, std::string name);
