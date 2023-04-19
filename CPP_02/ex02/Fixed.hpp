@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:42:51 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/19 11:46:27 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/19 12:55:33 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 class Fixed {
 public:
     Fixed();
-    Fixed(const int value);
+    Fixed(int const value);
     Fixed(const float value);
     ~Fixed();
 
@@ -30,7 +30,7 @@ public:
     Fixed& operator=(const Fixed& other);
 
     int getRawBits() const;
-    void setRawBits(const int raw);
+    void setRawBits(int const raw);
 
     float toFloat() const;
     int toInt() const;
@@ -63,7 +63,7 @@ public:
 
 private:
     int _value;
-    static const int _fracBits = 8;
+    static int const _fracBits = 8;
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed);

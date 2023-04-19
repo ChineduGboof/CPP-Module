@@ -6,13 +6,13 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:42:48 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/19 11:36:08 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/19 12:54:29 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed():_fixedPnbr(0){
+Fixed::Fixed():_value(0){
     std::cout <<YELLOW "Default constructor called" << std::endl;
 }
 
@@ -20,9 +20,9 @@ Fixed::Fixed():_fixedPnbr(0){
     converts an integer into a fixed-point number.
     multiply the integer by 2^8 = 256
 */
-Fixed::Fixed(const int num){
+Fixed::Fixed(int const num){
     std::cout << "Int constructor called" << std::endl;
-    this->_fixedPnbr = num << _fracBits;  
+    this->_value = num << _fracBits;  
 }
 
 /*
@@ -33,7 +33,7 @@ Fixed::Fixed(const int num){
 */
 Fixed::Fixed(const float num){
     std::cout << "Float constructor called" << std::endl;
-    this->_fixedPnbr = static_cast<int>(roundf(num * (1 << _fracBits) + 0.5));
+    this->_value = static_cast<int>(roundf(num * (1 << _fracBits) + 0.5));
 }
 
 Fixed::Fixed(Fixed const & src){
@@ -43,15 +43,18 @@ Fixed::Fixed(Fixed const & src){
 }
 
 int Fixed::getRawBits(void)const{
-    return this->_fixedPnbr;
+    return this->_value;
 }
 
+void Fixed::setRawBits(int const raw){
+    this->_value = raw;
+}
 /*
     convert a fixed-point number back to its equivalent floating-point value.
     floatValue = fixedPnbr / 2^_fracBits
 */
 float Fixed::toFloat(void) const{
-    return static_cast<float>(_fixedPnbr) / (1 << _fracBits);
+    return static_cast<float>(_value) / (1 << _fracBits);
 }
 
 /*
@@ -59,13 +62,13 @@ float Fixed::toFloat(void) const{
     equivalent to division by 2^8 = 256
 */
 int Fixed::toInt(void) const{
-    return _fixedPnbr >> _fracBits; 
+    return _value >> _fracBits; 
 }
 
 Fixed & Fixed::operator=(Fixed const & rhs){
     std::cout << "Copy assignment operator called " << std::endl;
     if (this != &rhs)
-        this->_fixedPnbr = rhs.getRawBits();
+        this->_value = rhs.getRawBits();
     return *this;
 }
 

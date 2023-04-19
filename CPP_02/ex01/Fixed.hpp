@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:42:51 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/19 10:29:40 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/19 12:54:49 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,17 @@
 
 class Fixed{
     private:  
-        int _fixedPnbr;
-        static const int _fracBits = 8;
+        int _value;
+        static int const _fracBits = 8;
     public:  
         Fixed();
-        Fixed(const int num);
+        Fixed(int const num);
         Fixed(const float num);
         Fixed(Fixed const & src);
         Fixed & operator=(Fixed const & rhs);
         ~Fixed(void);
         int getRawBits(void)const;
+        void setRawBits(int const raw);
         float toFloat(void) const;
         int toInt(void) const;
 };

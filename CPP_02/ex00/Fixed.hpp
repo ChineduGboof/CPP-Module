@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:42:51 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/19 10:29:50 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/19 12:53:52 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class Fixed{
     private:  
         int _value;
-        static const int _fracBits = 8;
+        static int const _fracBits = 8;
     public:  
         Fixed();
         Fixed(Fixed const & src);

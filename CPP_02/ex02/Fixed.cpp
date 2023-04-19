@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 11:47:24 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/19 11:47:55 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/19 14:19:25 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Fixed::Fixed() : _value(0) {}
 
-Fixed::Fixed(const int value) : _value(value <<  _fracBits) {}
+Fixed::Fixed(int const value) : _value(value <<  _fracBits) {}
 
 Fixed::Fixed(const float value) : _value(roundf(value * (1 <<  _fracBits))) {}
 
@@ -33,7 +33,7 @@ int Fixed::getRawBits() const {
     return _value;
 }
 
-void Fixed::setRawBits(const int raw) {
+void Fixed::setRawBits(int const raw) {
     _value = raw;
 }
 
@@ -82,26 +82,33 @@ Fixed Fixed::operator*(const Fixed& other) const {
 }
 
 Fixed Fixed::operator/(const Fixed& other) const {
-    return Fixed(this->toFloat() / other.toFloat());
+    if (other._value == 0) {
+        return Fixed(0);
+    }
+    return Fixed(this->_value / other._value);
 }
 
-Fixed& Fixed::operator++() { // pre-increment
+// pre-increment
+Fixed& Fixed::operator++() {
     _value += 1;
     return *this;
 }
 
-Fixed Fixed::operator++(int) { // post-increment
+// post-increment
+Fixed Fixed::operator++(int) {
     Fixed tmp(*this);
     operator++();
     return tmp;
 }
 
-Fixed& Fixed::operator--() { // pre-decrement
+// pre-decrement
+Fixed& Fixed::operator--() {
     _value -= 1;
     return *this;
 }
 
-Fixed Fixed::operator--(int) { // post-decrement
+// pre-decrement
+Fixed Fixed::operator--(int) {
     Fixed tmp(*this);
     operator--();
     return tmp;
