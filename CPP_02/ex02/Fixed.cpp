@@ -1,61 +1,16 @@
-#ifndef FIXED_H
-# define FIXED_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/19 11:47:24 by cegbulef          #+#    #+#             */
+/*   Updated: 2023/04/19 11:47:55 by cegbulef         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-# include <iostream>
-
-class Fixed {
-public:
-    Fixed();
-    Fixed(const int value);
-    Fixed(const float value);
-    ~Fixed();
-
-    Fixed(const Fixed& other);
-    Fixed& operator=(const Fixed& other);
-
-    int getRawBits() const;
-    void setRawBits(const int raw);
-
-    float toFloat() const;
-    int toInt() const;
-
-    // comparison operators
-    bool operator>(const Fixed& other) const;
-    bool operator<(const Fixed& other) const;
-    bool operator>=(const Fixed& other) const;
-    bool operator<=(const Fixed& other) const;
-    bool operator==(const Fixed& other) const;
-    bool operator!=(const Fixed& other) const;
-
-    // arithmetic operators
-    Fixed operator+(const Fixed& other) const;
-    Fixed operator-(const Fixed& other) const;
-    Fixed operator*(const Fixed& other) const;
-    Fixed operator/(const Fixed& other) const;
-
-    // increment/decrement operators
-    Fixed& operator++(); // pre-increment
-    Fixed operator++(int); // post-increment
-    Fixed& operator--(); // pre-decrement
-    Fixed operator--(int); // post-decrement
-
-    // static member functions
-    static Fixed& min(Fixed& a, Fixed& b);
-    static const Fixed& min(const Fixed& a, const Fixed& b);
-    static Fixed& max(Fixed& a, Fixed& b);
-    static const Fixed& max(const Fixed& a, const Fixed& b);
-
-private:
-    int _value;
-    static const int  _fracBits = 8;
-};
-
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
-
-#endif
-
-// #include "Fixed.hpp"
-#include <cmath>
+#include "Fixed.hpp"
 
 Fixed::Fixed() : _value(0) {}
 
@@ -172,30 +127,3 @@ std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {
     os << fixed.toFloat();
     return os;
 }
-
-
-int main( void ) {
-    Fixed a;
-    Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << Fixed::max( a, b ) << std::endl;
-    return 0;
-}
-/*
-
-Should output something like (for greater readability, the constructor/destructor messages are removed in the example below):
-$> ./a.out
-0
-0.00390625
-0.00390625
-0.00390625
-0.0078125
-10.1016
-10.1016
-$>
-*/

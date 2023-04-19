@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:42:48 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/18 22:39:06 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/19 11:36:08 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,24 @@ Fixed::Fixed():_fixedPnbr(0){
     std::cout <<YELLOW "Default constructor called" << std::endl;
 }
 
+/*
+    converts an integer into a fixed-point number.
+    multiply the integer by 2^8 = 256
+*/
 Fixed::Fixed(const int num){
     std::cout << "Int constructor called" << std::endl;
-    this->_fixedPnbr = num << _fracBits;  // multiply the integer by 2^8 = 256
+    this->_fixedPnbr = num << _fracBits;  
 }
 
-// multiply the float by 2^8 = 256 and round off to an integer using floor or ceil
-// the need to add 0.5 before calling std::floor is simply a way to simulate rounding 
-// to the nearest integer. It ensures that we round up when the fractional part is greater than or equal to 0.5, and round down otherwise.
+/*
+    Convert a floating-point number to a fixed-point representation
+    multiply the float by 2^8 = 256 and round off to an integer
+    add 0.5 to ensure that we round UP when the fractional part is 
+    greater than or equal to 0.5, and round down otherwise.
+*/
 Fixed::Fixed(const float num){
     std::cout << "Float constructor called" << std::endl;
-    this->_fixedPnbr = static_cast<int>(std::floor(num * (1 << _fracBits) + 0.5));
+    this->_fixedPnbr = static_cast<int>(roundf(num * (1 << _fracBits) + 0.5));
 }
 
 Fixed::Fixed(Fixed const & src){
@@ -39,12 +46,18 @@ int Fixed::getRawBits(void)const{
     return this->_fixedPnbr;
 }
 
-// floatValue = fixedPnbr / 2^_fracBits
+/*
+    convert a fixed-point number back to its equivalent floating-point value.
+    floatValue = fixedPnbr / 2^_fracBits
+*/
 float Fixed::toFloat(void) const{
     return static_cast<float>(_fixedPnbr) / (1 << _fracBits);
 }
 
-// equivalent to division by 2^8 = 256
+/*
+    converts a fixed-point number back to its integer value
+    equivalent to division by 2^8 = 256
+*/
 int Fixed::toInt(void) const{
     return _fixedPnbr >> _fracBits; 
 }
@@ -60,9 +73,12 @@ Fixed::~Fixed(void){
     std::cout << YELLOW "Destructor called" DEFAULT << std::endl;
 }
 
+/*
+    Overloading the << operator for a class allows you to directly 
+    print objects of that class without having to call getter functions.
+*/
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 {
     os << fixed.toFloat();
     return os;
 }
-
