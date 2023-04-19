@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 16:42:51 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/19 12:55:33 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/19 16:50:51 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 #define DEFAULT	"\033[0m"
 #define YELLOW 	"\e[0;33m"
+#define GREEN	"\033[1;32m"
+#define CYAN	"\033[0;36m"
 
 class Fixed {
 public:

@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 11:47:24 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/19 14:19:25 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/19 16:48:15 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ Fixed Fixed::operator/(const Fixed& other) const {
     if (other._value == 0) {
         return Fixed(0);
     }
-    return Fixed(this->_value / other._value);
+    return Fixed(this->toFloat() / other.toFloat());
 }
 
 // pre-increment
