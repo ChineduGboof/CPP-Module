@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 11:47:24 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/19 18:54:38 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/20 11:05:25 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void Fixed::setRawBits(int const raw) {
 }
 
 float Fixed::toFloat() const {
-    return static_cast<float>(_value) / (1 <<  _fracBits);
+    return static_cast<float>(_value) / (1 << _fracBits);
 }
 
 int Fixed::toInt() const {

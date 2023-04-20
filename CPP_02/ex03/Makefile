@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+         #
+#    By: gboof <gboof@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 16:43:12 by cegbulef          #+#    #+#              #
-#    Updated: 2023/04/19 18:59:05 by cegbulef         ###   ########.fr        #
+#    Updated: 2023/04/20 11:06:19 by gboof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	fixed
+NAME		=	bsp
 
 SRCS		=	main.cpp Fixed.cpp Point.cpp bsp.cpp
 				

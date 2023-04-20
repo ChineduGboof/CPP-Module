@@ -6,7 +6,7 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 18:57:11 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/20 10:08:36 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/20 10:52:59 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,16 @@ Otherwise, the point is outside the triangle, and the function returns false.
 */
 
 Fixed sign(Point p1, Point p2, Point p3) {
-    return ((p1.getX() - p3.getX()) * (p2.getY() - p3.getY())) -
-            ((p2.getX() - p3.getX()) * (p1.getY() - p3.getY()));
+    return (p1.getX() - p3.getX()) * (p2.getY() - p3.getY()) -
+           (p2.getX() - p3.getX()) * (p1.getY() - p3.getY());
 }
 
-bool bsp( Point const a, Point const b, Point const c, Point const pt) {
+bool bsp(Point const a, Point const b, Point const c, Point const pt) {
     Fixed s1 = sign(pt, a, b);
     Fixed s2 = sign(pt, b, c);
     Fixed s3 = sign(pt, c, a);
-    return (s1 > 0 && s2 > 0 && s3 > 0) || (s1 < 0 && s2 < 0 && s3 < 0);
+    return (s1 >= 0 && s2 >= 0 && s3 >= 0) || (s1 <= 0 && s2 <= 0 && s3 <= 0);
 }
-
-
-
 /*
 BSP stands for Binary Space Partitioning, 
 which is a technique used in computer graphics and computational geometry to divide a space into smaller regions. 
