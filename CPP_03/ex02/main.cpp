@@ -5,26 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 18:58:07 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/20 11:36:18 by gboof            ###   ########.fr       */
+/*   Created: 2023/04/19 21:57:19 by gboof             #+#    #+#             */
+/*   Updated: 2023/04/19 22:02:33 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
-#include "Fixed.hpp"
-#include <iostream>
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main() {
+int main()
+{
+    ClapTrap clapTrapDefault;
+    ClapTrap clapTrapParameter("Clappy");
+    ClapTrap clapTrapCopy(clapTrapDefault);
+    clapTrapParameter.attack("Bad Guy");
+    clapTrapCopy.attack("Bad Guy");
 
-    // Test bsp function
-    Point a(0, 0);
-    Point b(0, 2);
-    Point c(2, 0);
-    Point inside(1, 1);
-    Point outside(2, 1);
-    
-    std::cout << "inside point is " << (bsp(a, b, c, inside) ? "inside" : "outside") << " the triangle" << std::endl;
-    std::cout << "outside point is " << (bsp(a, b, c, outside) ? "inside" : "outside") << " the triangle" << std::endl;
-    
+    ScavTrap scavTrapDefault;
+    ScavTrap scavTrapParameter("Scavy");
+    ScavTrap scavTrapCopy(scavTrapDefault);
+
+    scavTrapParameter.attack("Bad Guy");
+    scavTrapCopy.attack("Bad Guy");
+
+    scavTrapParameter.guardGate();
+    scavTrapCopy.guardGate();
+
     return 0;
 }

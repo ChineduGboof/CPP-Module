@@ -6,7 +6,7 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 18:57:11 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/20 10:52:59 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/21 09:04:27 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ bool bsp(Point const a, Point const b, Point const c, Point const pt) {
     Fixed s3 = sign(pt, c, a);
     return (s1 >= 0 && s2 >= 0 && s3 >= 0) || (s1 <= 0 && s2 <= 0 && s3 <= 0);
 }
+
+
 /*
 BSP stands for Binary Space Partitioning, 
 which is a technique used in computer graphics and computational geometry to divide a space into smaller regions. 

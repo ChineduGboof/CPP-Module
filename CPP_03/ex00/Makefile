@@ -6,11 +6,11 @@
 #    By: gboof <gboof@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 16:43:12 by cegbulef          #+#    #+#              #
-#    Updated: 2023/04/19 21:42:08 by gboof            ###   ########.fr        #
+#    Updated: 2023/04/21 00:12:03 by gboof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	fixed
+NAME		=	claptrap
 
 SRCS		=	main.cpp ClapTrap.cpp
 				
