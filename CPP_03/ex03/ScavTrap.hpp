@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 21:57:19 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/21 10:32:08 by gboof            ###   ########.fr       */
+/*   Created: 2023/04/19 21:59:17 by gboof             #+#    #+#             */
+/*   Updated: 2023/04/19 22:05:17 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-int main()
+#include "ClapTrap.hpp"
+#include <iostream>
+#include <string>
+
+class ScavTrap : public ClapTrap
 {
-	FragTrap evil("evil");
-	FragTrap fraggy("fraggy");
-	evil.attack("fraggy");
-	evil.attack("fraggy");
-	evil.attack("fraggy");
-	fraggy.beRepaired(20);
-	fraggy.beRepaired(20);
-	fraggy.attack("evil");
-	fraggy.highFivesGuys();
-}
+public:
+    ScavTrap();
+    ScavTrap(const std::string& name);
+    ScavTrap(const ScavTrap& other);
+    ~ScavTrap();
+    ScavTrap& operator=(const ScavTrap& other);
+    void guardGate();
+    void attack(const std::string& target);
+};
+
+
+#endif
