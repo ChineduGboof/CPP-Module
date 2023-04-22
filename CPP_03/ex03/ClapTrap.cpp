@@ -6,7 +6,7 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 21:43:30 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/21 09:52:28 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/22 19:57:51 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap(void) : _name("default"),  _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "ClapTrap default constructor called" << std::endl;
+	std::cout << CYAN << "Default ClapTrap constructor called for " << _name << "!" << DEFAULT << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
@@ -41,7 +41,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap & other){
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "ClapTrap " << _name << " destructor called" << std::endl;
+    std::cout << CYAN << "Destructor called for ClapTrap " << _name << "!" << DEFAULT << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)

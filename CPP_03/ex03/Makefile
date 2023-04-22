@@ -6,13 +6,13 @@
 #    By: gboof <gboof@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 16:43:12 by cegbulef          #+#    #+#              #
-#    Updated: 2023/04/21 10:16:10 by gboof            ###   ########.fr        #
+#    Updated: 2023/04/22 19:53:45 by gboof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	fragtrap
+NAME		=	diamondtrap
 
-SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJS		=	$(SRCS:%.cpp=%.o)
 

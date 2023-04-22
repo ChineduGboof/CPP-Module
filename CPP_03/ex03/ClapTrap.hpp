@@ -6,7 +6,7 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 21:48:45 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/21 09:52:37 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/22 19:37:34 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ public:
     ClapTrap();
     ClapTrap(const std::string& name);
     ClapTrap(const ClapTrap& other);
-    virtual ~ClapTrap();
+    ~ClapTrap();
 
     ClapTrap& operator=(const ClapTrap& other);
 
