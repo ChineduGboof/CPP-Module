@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 18:17:19 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/22 20:17:21 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/23 10:59:55 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
+/*
+    the scope resolution operator :: is used to access a member of a specific namespace or class.
+    This is necessary because DiamondTrap inherits from multiple base classes, 
+    each of which may have members with the same name. 
+    Using the :: operator allows us to specify which base class we want to access a member from.
+*/
 
  DiamondTrap::DiamondTrap(): _name("Default") {
     std::cout << CYAN << "DiamondTrap default constructor called" << DEFAULT <<std::endl;
