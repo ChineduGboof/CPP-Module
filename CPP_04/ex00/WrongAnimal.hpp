@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 21:48:45 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/22 21:14:23 by gboof            ###   ########.fr       */
+/*   Created: 2023/04/22 22:53:43 by gboof             #+#    #+#             */
+/*   Updated: 2023/04/22 23:30:33 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-#include <string>
 #include <iostream>
 
 #define DEFAULT	"\033[0m"
@@ -22,26 +21,17 @@
 #define CYAN	"\033[0;36m"
 #define RED 	"\e[0;31m"
 
-class ClapTrap
-{
-protected:
-    std::string _name;
-    unsigned int _hitPoints;
-    unsigned int _energyPoints;
-    unsigned int _attackDamage;
+class WrongAnimal {
+    protected:
+            std::string _type;
+    public:
+        WrongAnimal();
+        WrongAnimal(const WrongAnimal & other);
+        WrongAnimal & operator=(const WrongAnimal & other);
+        ~WrongAnimal();
 
-public:
-    ClapTrap();
-    ClapTrap(const std::string& name);
-    ClapTrap(const ClapTrap& other);
-    virtual ~ClapTrap();
-
-    ClapTrap& operator=(const ClapTrap& other);
-
-    void attack(const std::string& target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
-
+        void makeSound()const;
+        const std::string &getType()const;
 };
 
 #endif

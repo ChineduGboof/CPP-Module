@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 21:48:45 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/22 21:14:23 by gboof            ###   ########.fr       */
+/*   Created: 2023/04/22 20:54:20 by gboof             #+#    #+#             */
+/*   Updated: 2023/04/23 09:38:46 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-#include <string>
 #include <iostream>
 
 #define DEFAULT	"\033[0m"
@@ -22,26 +21,17 @@
 #define CYAN	"\033[0;36m"
 #define RED 	"\e[0;31m"
 
-class ClapTrap
-{
-protected:
-    std::string _name;
-    unsigned int _hitPoints;
-    unsigned int _energyPoints;
-    unsigned int _attackDamage;
+class Animal {
+    protected:
+        std::string _type;
+    public:   
+        Animal();
+        Animal(const Animal & other);
+        Animal & operator=(const Animal & other);
+        virtual ~Animal();
 
-public:
-    ClapTrap();
-    ClapTrap(const std::string& name);
-    ClapTrap(const ClapTrap& other);
-    virtual ~ClapTrap();
-
-    ClapTrap& operator=(const ClapTrap& other);
-
-    void attack(const std::string& target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
-
+        virtual void makeSound()const = 0;
+        const std::string &getType()const;
 };
 
 #endif

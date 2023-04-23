@@ -6,13 +6,13 @@
 #    By: gboof <gboof@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 16:43:12 by cegbulef          #+#    #+#              #
-#    Updated: 2023/04/22 20:49:03 by gboof            ###   ########.fr        #
+#    Updated: 2023/04/23 09:19:55 by gboof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	diamondtrap
+NAME		=	brain
 
-SRCS		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+SRCS		=	main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 OBJS		=	$(SRCS:%.cpp=%.o)
 
@@ -39,11 +39,11 @@ $(NAME):	$(OBJS)
 
 clean:
 			@$(RM) $(OBJS)
-			@echo $(RED)"Deleted CPP 03 object files"$(DEFAULT)
+			@echo $(RED)"Deleted CPP 04 object files"$(DEFAULT)
 
 fclean:		clean
 			@$(RM) $(NAME)
-			@echo $(RED)"Deleted CPP 03 executable"$(DEFAULT)
+			@echo $(RED)"Deleted CPP 04 executable"$(DEFAULT)
 
 re:			fclean all
 
