@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:54:26 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/23 09:22:00 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/23 19:02:53 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ Cat::Cat(const Cat & other): Animal(other) {
 
 Cat & Cat::operator=(const Cat & other){
     if (this != &other) {
-        Animal::operator=(other);
-        *_brain = *other._brain;
+        _brain = new Brain(*other._brain);
+        _type = other._type;
     }
     std::cout << YELLOW << "A Cat has been assigned" << DEFAULT << std::endl;
     return *this;
@@ -38,7 +38,7 @@ Cat::~Cat(){
 }
 
 void Cat::makeSound()const {
-    std::cout << GREEN << "meaaaooowwwh😻" << DEFAULT << std::endl;
+    std::cout << GREEN << "meaaaooowww 😻" << DEFAULT << std::endl;
 }
 
 Brain* Cat::getBrain() const {

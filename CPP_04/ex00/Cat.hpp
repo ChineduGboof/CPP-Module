@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:54:28 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/22 22:43:02 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/23 16:26:47 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Cat: public Animal{
         Cat();
         Cat(const Cat & other);
         Cat & operator=(const Cat & other);
-        ~Cat();
+        virtual ~Cat();
         
         void makeSound()const;
 };

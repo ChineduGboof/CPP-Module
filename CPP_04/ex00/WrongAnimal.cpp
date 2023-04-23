@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 23:02:55 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/22 23:15:07 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/23 16:32:18 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal():_type("default") {
+WrongAnimal::WrongAnimal():_type("Anime") {
     std::cout << YELLOW << "Default WrongAnimal Constructor Called" << DEFAULT << std::endl;
 }
 
@@ -40,7 +40,7 @@ WrongAnimal::~WrongAnimal(){
 }
 
 void WrongAnimal::makeSound()const{
-    std::cout << GREEN << "cluck cluck" << DEFAULT << std::endl;
+    std::cout << GREEN << "bleet bleet 🐐" << DEFAULT << std::endl;
 }
 
 const std::string & WrongAnimal::getType()const{

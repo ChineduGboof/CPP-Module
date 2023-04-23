@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:54:23 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/22 23:14:54 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/23 16:29:57 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal():_type("default") {
+Animal::Animal():_type("Anime") {
     std::cout << YELLOW << "Default Animal Constructor Called" << DEFAULT << std::endl;
 }
 
@@ -33,7 +33,7 @@ Animal::~Animal(){
 }
 
 void Animal::makeSound()const{
-    std::cout << GREEN << "cluck cluck" << DEFAULT << std::endl;
+    std::cout << GREEN << "cluck cluck 🐔" << DEFAULT << std::endl;
 }
 
 const std::string & Animal::getType()const{

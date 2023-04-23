@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 23:39:22 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/23 09:42:59 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/23 19:59:47 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ int	main() {
 	const Animal *i = new Cat;
 
 	/*
-		in the event that we uncomment the following code below it should
-		display some error messages during compilation since we are trying to
-		instantiate an object from a class with a pure virtual function, also
-		known as an abstract class
+		if we uncomment the code below, it will display some error messages during compilation 
+		since we are trying to instantiate an object from a class with a pure virtual function,
+		also known as an abstract class
 	*/
 
 	// const Animal k;

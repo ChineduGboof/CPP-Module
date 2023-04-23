@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:54:37 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/22 23:32:37 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/23 17:35:29 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,28 +47,11 @@ void doWrongAnimalTests() {
 	delete wrongAnimal;
 }
 
-void doExtraTests() {
-	Animal animal;
-	Dog dogClass;
-	Cat catClass;
-	Animal &dog = dogClass, &cat = catClass;
-
-	std::cout << CYAN << animal.getType() << ": ";
-	animal.makeSound();
-	std::cout << dog.getType() << ": ";
-	dog.makeSound();
-	std::cout << cat.getType() << ": ";
-	cat.makeSound();
-	std::cout << DEFAULT;
-}
-
 int	main() {
 	std::cout << YELLOW "Subject Tests" DEFAULT << std::endl;
 	doSubjectTests();
 	std::cout << YELLOW "\nWrong Animal Tests" DEFAULT << std::endl;
 	doWrongAnimalTests();
-	std::cout << YELLOW "\nExtra Tests" DEFAULT << std::endl;
-	doExtraTests();
 
 	return 0;
 }

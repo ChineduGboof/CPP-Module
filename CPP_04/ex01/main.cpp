@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 23:39:22 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/23 09:34:08 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/23 19:57:14 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,6 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "Brain.hpp"
-
-// int main()
-// {
-// const Animal* j = new Dog();
-// const Animal* i = new Cat();
-// delete j;//should not create a leak
-// delete i;
-// return 0;
-// }
 
 void doSubjectTests() {
 	const Animal *j = new Dog;
@@ -52,22 +43,18 @@ void doDeepCopyTests() {
 	Dog dog;
 	std::cout << CYAN "Dog: ";
 	dog.makeSound();
-	// dog.shareIdeas();
 	
 	Dog dogCopy(dog);
 	std::cout << CYAN "Dog Clone: ";
 	dogCopy.makeSound();
-	// dogCopy.shareIdeas();
 
 	Cat cat;
 	std::cout << CYAN "Cat: ";
 	cat.makeSound();
-	// cat.shareIdeas();
 
 	Cat catCopy = cat;
 	std::cout << CYAN "Cat Clone: ";
 	catCopy.makeSound();
-	// catCopy.shareIdeas();
 }
 
 int	main() {
