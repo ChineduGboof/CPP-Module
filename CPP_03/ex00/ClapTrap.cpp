@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 21:43:30 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/21 17:50:00 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/23 12:31:21 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 ClapTrap::ClapTrap(void) : _name("default"),  _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
+}
+
+// handles the issue of passing a NULL parameter
+ClapTrap::ClapTrap(std::string *name) : _hitPoints(10), _energyPoints(10), _attackDamage(0)
+{
+    if (name == NULL || (*name).empty()){
+        std::cout << "Please pass a valid string" << std::endl;
+        exit(1);
+    }
+    _name = *name;
+    std::cout << "ClapTrap " << _name << " constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
@@ -42,6 +53,25 @@ ClapTrap& ClapTrap::operator=(const ClapTrap & other){
 ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap " << _name << " destructor called" << std::endl;
+}
+
+// handles the issue of passing a NULL parameter
+void ClapTrap::attack(const std::string* target)
+{
+    if (target == NULL || (*target).empty()){
+        std::cout << "Please pass a valid string" << std::endl;
+        exit(1);
+    }
+
+    if (_energyPoints == 0)
+    {
+        std::cout << CYAN << "ClapTrap " << _name << " has no energy points left and cannot attack." << DEFAULT << std::endl;
+        return;
+    }
+    
+    std::cout << YELLOW << "ClapTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << DEFAULT << std::endl;
+    
+    _energyPoints--;
 }
 
 void ClapTrap::attack(const std::string& target)

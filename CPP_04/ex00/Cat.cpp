@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:54:26 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/23 09:22:06 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/23 11:24:03 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Cat::Cat() {
     _type = "Cat";
 }
 
-Cat::Cat(const Cat & other) {
+Cat::Cat(const Cat & other): Animal() {
     std::cout << YELLOW << "Default Cat Copy Constructor Called" << DEFAULT << std::endl;
     _type = other._type;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:54:31 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/23 09:22:25 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/23 11:23:53 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Dog::Dog() {
     _type = "Dog";
 }
 
-Dog::Dog(const Dog & other) {
+Dog::Dog(const Dog & other): Animal() {
     std::cout << YELLOW << "Default Dog Copy Constructor Called" << DEFAULT << std::endl;
     _type = other._type;
 }
