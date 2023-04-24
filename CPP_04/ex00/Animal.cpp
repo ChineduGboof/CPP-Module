@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:54:23 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/23 16:29:57 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/24 15:20:49 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ Animal::Animal():_type("Anime") {
     std::cout << YELLOW << "Default Animal Constructor Called" << DEFAULT << std::endl;
 }
 
-Animal::Animal(const Animal & other): _type(other._type){
+Animal::Animal(const Animal & other){
     std::cout << YELLOW << "Default Animal Copy Constructor Called" << DEFAULT << std::endl;
+    *this = other;
 }
 
 Animal & Animal::operator=(const Animal & other){

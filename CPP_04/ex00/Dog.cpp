@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:54:31 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/23 11:23:53 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/24 15:22:31 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Dog::Dog() {
 
 Dog::Dog(const Dog & other): Animal() {
     std::cout << YELLOW << "Default Dog Copy Constructor Called" << DEFAULT << std::endl;
-    _type = other._type;
+    *this = other;
 }
 
 Dog & Dog::operator=(const Dog & other){

@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:54:26 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/23 11:24:03 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/24 15:22:13 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Cat::Cat() {
 
 Cat::Cat(const Cat & other): Animal() {
     std::cout << YELLOW << "Default Cat Copy Constructor Called" << DEFAULT << std::endl;
-    _type = other._type;
+    *this = other;
 }
 
 Cat & Cat::operator=(const Cat & other){

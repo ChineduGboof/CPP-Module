@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 23:02:55 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/23 16:32:18 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/24 15:23:55 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ WrongAnimal::WrongAnimal():_type("Anime") {
     std::cout << YELLOW << "Default WrongAnimal Constructor Called" << DEFAULT << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal & other): _type(other._type){
+WrongAnimal::WrongAnimal(const WrongAnimal & other){
     std::cout << YELLOW << "Default WrongAnimal Copy Constructor Called" << DEFAULT << std::endl;
+    *this = other;
 }
 
 WrongAnimal & WrongAnimal::operator=(const WrongAnimal & other){

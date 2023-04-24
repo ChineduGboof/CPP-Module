@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:54:26 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/23 23:46:40 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/24 15:15:56 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,40 +17,30 @@ Cat::Cat(): _brain(new Brain()) {
     std::cout << YELLOW << "A new Cat has been created" << DEFAULT << std::endl;
 }
 
-// Cat::Cat(const Cat & other): Animal(other) {
-//     _type = other._type;
-//     _brain = new Brain(*other._brain);
-//     std::cout << YELLOW << "A Cat has been copied" << DEFAULT << std::endl;
-// }
 Cat::Cat(const Cat & other): Animal(other) {
-    _type = other._type;
-    if (other._brain) {
-        _brain = new Brain(*other._brain);
-    } else {
-        _brain = NULL;
-    }
+    _brain = new Brain(*other._brain);
     std::cout << YELLOW << "A Cat has been copied" << DEFAULT << std::endl;
+    *this = other;
 }
 
+Cat & Cat::operator=(const Cat & other){
+    std::cout << YELLOW << "A Cat has been assigned" << DEFAULT << std::endl;
+    if (this != &other) {
+        *_brain = *other._brain;
+        _type = other._type;
+    }
+    return *this;
+}
 
-// Cat & Cat::operator=(const Cat & other){
+// Cat& Cat::operator=(const Cat& other) {
 //     if (this != &other) {
-//         _brain = new Brain(*other._brain);
+//         delete _brain;
+//         _brain = other._brain ? new Brain(*other._brain) : NULL;
 //         _type = other._type;
 //     }
 //     std::cout << YELLOW << "A Cat has been assigned" << DEFAULT << std::endl;
 //     return *this;
 // }
-
-Cat& Cat::operator=(const Cat& other) {
-    if (this != &other) {
-        delete _brain;
-        _brain = other._brain ? new Brain(*other._brain) : NULL;
-        _type = other._type;
-    }
-    std::cout << YELLOW << "A Cat has been assigned" << DEFAULT << std::endl;
-    return *this;
-}
 
 Cat::~Cat(){
     delete _brain;
