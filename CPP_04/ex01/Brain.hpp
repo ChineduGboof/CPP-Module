@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 23:36:46 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/23 08:50:28 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/25 09:28:13 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ class Brain {
         ~Brain();
         void setIdea(int i, const std::string& idea);
         const std::string& getIdea(int i) const;
+
 };
 #endif

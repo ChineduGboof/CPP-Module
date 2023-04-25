@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:54:31 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/24 15:15:00 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/25 10:03:44 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,6 @@ Dog & Dog::operator=(const Dog & other){
     }
     return *this;
 }
-
-// Dog& Dog::operator=(const Dog& other) {
-//     if (this != &other) {
-//         delete _brain;
-//         _brain = other._brain ? new Brain(*other._brain) : NULL;
-//         _type = other._type;
-//     }
-//     std::cout << YELLOW << "A Dog has been assigned" << DEFAULT << std::endl;
-//     return *this;
-// }
-
 
 Dog::~Dog(){
     delete _brain;

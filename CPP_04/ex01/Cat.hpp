@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 20:54:28 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/23 09:15:42 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/25 09:36:44 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ class Cat: public Animal{
         virtual void makeSound()const;
         Brain* getBrain() const;
 };
+
+
 #endif
