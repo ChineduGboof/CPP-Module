@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 23:39:22 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/24 20:10:51 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/04/25 10:03:11 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,55 +15,58 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-void doSubjectTests() {
-	const Animal *j = new Dog;
-	const Animal *i = new Cat;
-
-	delete i;
-	delete j;
-}
-
-void doArrayTests() {
-	int size = 6;
-	const Animal *array[size];
-
-	for (int i = 0; i < size; i++) {
-		if (i < size / 2) {
-			array[i] = new Dog;
-		} else {
-			array[i] = new Cat;
-		}
-	}
-	for (int i = size - 1; i > -1; i--) {
-		delete array[i];
-	}
-}
-
-void doDeepCopyTests() {
+int main()
+{
+/*
+    //there is problem, cant compile as abstract
+    const Animal* meta = new Animal("Bat");
+	delete meta;
+	std::cout << std::endl;
+*/
+	// testing Brain class
+	std::cout << "** test if ideas are deep copy **" << std::endl;
 	Dog dog;
-	std::cout << CYAN "Dog: ";
-	dog.makeSound();
-	
-	Dog dogCopy(dog);
-	std::cout << CYAN "Dog Clone: ";
-	dogCopy.makeSound();
+	Brain *a = dog.getBrain();
 
 	Cat cat;
-	std::cout << CYAN "Cat: ";
-	cat.makeSound();
+	Brain *b = cat.getBrain();
 
-	Cat catCopy = cat;
-	std::cout << CYAN "Cat Clone: ";
-	catCopy.makeSound();
-}
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
 
-int	main() {
-	std::cout << YELLOW "Subject Tests" DEFAULT << std::endl;
-	doSubjectTests();
-	std::cout << YELLOW "\nAnimal Array Tests" DEFAULT << std::endl;
-	doArrayTests();
-	std::cout << YELLOW "\nDeep Copy Tests" DEFAULT << std::endl;
-	doDeepCopyTests();
+    // testing deep copy
+    Dog dog2;
+    dog2 = dog;
+    Brain *c = dog2.getBrain();
+    std::cout << c << std::endl; // now is the same ideas from dog
+    std::cout << a << std::endl;
+  
+
+
+	// from subject
+	std::cout << "** tests from subject **" << std::endl;
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	delete j;//should not create a leak
+	delete i;
+	std::cout << std::endl;
+
+	// testing array of animals
+	std::cout << "** test with array of animals **" << std::endl;
+	int nbrAnimals = 4;
+	Animal *animal[nbrAnimals];
+	for (int i = 0; i < nbrAnimals; i++ )
+	{
+		if (i % 2)
+			animal[i] = new Dog();
+		else
+			animal[i] = new Cat();
+	}
+	std::cout << "Arrays of Animals created: " << std::endl;
+	for (int i = 0; i < nbrAnimals; i++)
+			std::cout << "animal[" << i << "]: " << animal[i]->getType() << std::endl;
+	for (int i = 0; i < nbrAnimals; i++ )
+			delete animal[i];
 
 	return 0;
 }
