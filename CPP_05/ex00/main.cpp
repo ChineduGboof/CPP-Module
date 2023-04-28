@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/26 19:46:43 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/26 19:48:30 by gboof            ###   ########.fr       */
+/*   Created: 2023/04/27 21:01:23 by gboof             #+#    #+#             */
+/*   Updated: 2023/04/28 12:39:48 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,45 +16,29 @@ int main()
 {
     try
     {
-        Bureaucrat bureaucrat("John", 50);
+        Bureaucrat bureaucrat("Chinedu", 150);
+        Bureaucrat bureaucrat2(NULL, 70);
+        // bureaucrat.decrementGrade();
+        // bureaucrat = bureaucrat2;
+        
         std::cout << bureaucrat << std::endl;
+        std::cout << bureaucrat2 << std::endl;
 
-        bureaucrat.incrementGrade();
-        std::cout << bureaucrat << std::endl;
-
-        bureaucrat.incrementGrade();
-        std::cout << bureaucrat << std::endl;
     }
-    catch (std::exception& e)
+    catch (const Bureaucrat::GradeTooHighException& e)
     {
-        std::cout << e.what() << std::endl;
+        std::cout << "Caught GradeTooHighException: " << e.what() << std::endl;
     }
-
-    try
+    catch (const Bureaucrat::GradeTooLowException& e)
     {
-        Bureaucrat bureaucrat("Bob", 1);
-        std::cout << bureaucrat << std::endl;
-
-        bureaucrat.decrementGrade();
-        std::cout << bureaucrat << std::endl;
-
-        bureaucrat.decrementGrade();
-        std::cout << bureaucrat << std::endl;
+        std::cout << "Caught GradeTooLowException: " << e.what() << std::endl;
     }
-    catch (std::exception& e)
+    catch (const Bureaucrat::NullStringException& e)
     {
-        std::cout << e.what() << std::endl;
+        std::cout << "Caught NullStringException: " << e.what() << std::endl;
     }
-
-    try
+    catch (const std::exception& e) 
     {
-        Bureaucrat bureaucrat("Alice", 160);
-        std::cout << bureaucrat << std::endl;
+        std::cout << "Caught exception: " << e.what() << std::endl;
     }
-    catch (std::exception& e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-
-    return 0;
 }

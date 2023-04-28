@@ -5,50 +5,47 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/26 19:46:38 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/26 19:46:41 by gboof            ###   ########.fr       */
+/*   Created: 2023/04/27 21:01:26 by gboof             #+#    #+#             */
+/*   Updated: 2023/04/28 12:39:38 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
-
 #include <iostream>
-#include <string>
 
-class Bureaucrat
-{
-public:
-    Bureaucrat(const std::string& name, int grade);
-    Bureaucrat(const Bureaucrat& other);
-    ~Bureaucrat();
-
-    Bureaucrat& operator=(const Bureaucrat& other);
-
-    const std::string& getName() const;
-    int getGrade() const;
-
-    void incrementGrade();
-    void decrementGrade();
-
-    class GradeTooHighException : public std::exception
-    {
+class Bureaucrat{
+    private:
+        std::string const _name;
+        int _grade;
+        Bureaucrat();
     public:
-        const char* what() const throw();
-    };
+        class GradeTooHighException: public std::exception
+        {
+            public:  
+                virtual const char * what() const throw();
+        };
 
-    class GradeTooLowException : public std::exception
-    {
-    public:
-        const char* what() const throw();
-    };
+        class GradeTooLowException: public std::exception
+        {
+            public:  
+                virtual const char * what() const throw();
+        };
 
-private:
-    const std::string name_;
-    int grade_;
+        class NullStringException: public std::exception
+        {
+            public:  
+                virtual const char * what() const throw();
+        };
+        Bureaucrat(Bureaucrat const & other);
+        Bureaucrat & operator=(Bureaucrat const & other);
+        Bureaucrat(std::string const & name, int grade);
+        Bureaucrat(std::string const * name, int grade);
+        ~Bureaucrat();
+
+        std::string const & getName()const;
+        int getGrade()const;
+
+        void incrementGrade();
+        void decrementGrade();
 };
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
-
-#endif // BUREAUCRAT_HPP
+std::ostream & operator<<(std::ostream & os, Bureaucrat const & b);
