@@ -6,13 +6,13 @@
 #    By: gboof <gboof@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 16:43:12 by cegbulef          #+#    #+#              #
-#    Updated: 2023/04/27 21:01:09 by gboof            ###   ########.fr        #
+#    Updated: 2023/04/28 14:06:10 by gboof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	bureaucrat
 
-SRCS		=	main.cpp Bureaucrat.cpp
+SRCS		=	main.cpp Bureaucrat.cpp Form.cpp
 
 OBJS		=	$(SRCS:%.cpp=%.o)
 

@@ -6,7 +6,7 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 21:01:29 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/28 14:30:28 by gboof            ###   ########.fr       */
+/*   Updated: 2023/04/28 18:09:19 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,17 @@ void Bureaucrat::decrementGrade(){
 std::ostream & operator<<(std::ostream & os, Bureaucrat const & b){
     os << b.getName() << ", bureaucrat grade " << b.getGrade();
     return os;
+}
+
+void Bureaucrat::signForm(Form & form)
+{
+    try
+    {
+    	form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+		std::cout << _name << " couldn't sign " << form.getName() << " because " << e.what() << "." << std::endl;
+    }
 }
