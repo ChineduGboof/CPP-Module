@@ -6,15 +6,18 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 21:01:29 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/28 14:30:28 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/02 15:21:09 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(): _name("Default"), _grade(150) {}
+Bureaucrat::Bureaucrat(): _name("Default"), _grade(150) {
+    std::cout << "Bureaucrat Default Constructor called" << std::endl;
+}
 
 Bureaucrat::Bureaucrat(std::string const & name, int grade): _name(name) {
+    std::cout << "Bureaucrat Constructor called" << std::endl;
     if (grade > 150){
         throw(GradeTooLowException());
     }
@@ -25,63 +28,69 @@ Bureaucrat::Bureaucrat(std::string const & name, int grade): _name(name) {
         _grade = grade;
 }
 
-
 //catch an exception for if NULL is passed to name
-Bureaucrat::Bureaucrat(std::string const * name, int grade) : _name("") {
+Bureaucrat::Bureaucrat(std::string const * name, int grade) {
+    std::cout << "Bureaucrat Null Constructor called" << std::endl;
     if (name == NULL || name->empty()){
         throw NullStringException();
     }
     (void)grade;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const & other){ *this = other;}
+Bureaucrat::Bureaucrat(Bureaucrat const & other) { 
+    std::cout << "Bureaucrat Copy Constructor called" << std::endl;
+    *this = other;
+}
 
 Bureaucrat & Bureaucrat::operator=(Bureaucrat const & other){
    if (this != &other) {
+        std::cout << "Bureaucrat Copy Assignment Constructor called" << std::endl;
 		const_cast<std::string&>(_name) = other._name;
 		_grade = other._grade;
 	}
 	return *this;
 }
 
-Bureaucrat::~Bureaucrat(){}
+Bureaucrat::~Bureaucrat(){
+    std::cout << "Bureaucrat Destructor called" << std::endl;
+}
 
 std::string const & Bureaucrat::getName()const{ return _name; }
 
 int Bureaucrat::getGrade()const{ return _grade; }
 
 const char * Bureaucrat::GradeTooHighException::what() const throw(){
-    return "Grade is too high";
+    return RED "Grade is too high" DEFAULT;
 }
 
 const char * Bureaucrat::GradeTooLowException::what() const throw(){
-    return "Grade is too low";
+    return RED "Grade is too low" DEFAULT;
 }
 
 const char * Bureaucrat::NullStringException::what() const throw(){
-    return "A Null string was passed";
+    return RED "A Null string was passed" DEFAULT;
 }
 
 
 void Bureaucrat::incrementGrade(){
-    if (_grade > 1){
+    if (_grade > 1) {
         _grade--;
     }
-    else{
+    else {
         throw(GradeTooHighException());
     }
 }
 
 void Bureaucrat::decrementGrade(){
-    if (_grade < 150){
+    if (_grade < 150) {
         _grade++;
     }
-    else{
+    else {
         throw(GradeTooLowException());
     }
 }
 
 std::ostream & operator<<(std::ostream & os, Bureaucrat const & b){
-    os << b.getName() << ", bureaucrat grade " << b.getGrade();
+    os << GREEN << b.getName() << ", bureaucrat grade " << b.getGrade() << DEFAULT;
     return os;
 }
