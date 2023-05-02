@@ -6,13 +6,13 @@
 #    By: gboof <gboof@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 16:43:12 by cegbulef          #+#    #+#              #
-#    Updated: 2023/05/02 18:50:35 by gboof            ###   ########.fr        #
+#    Updated: 2023/05/02 19:56:55 by gboof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	form
+NAME		=	forms
 
-SRCS		=	main.cpp Bureaucrat.cpp Form.cpp
+SRCS		=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJS		=	$(SRCS:%.cpp=%.o)
 
@@ -38,7 +38,7 @@ $(NAME):	$(OBJS)
 			@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
-			@$(RM) $(OBJS)
+			@$(RM) $(OBJS) *_shrubbery
 			@echo $(RED)"Deleted CPP 05 object files"$(DEFAULT)
 
 fclean:		clean
