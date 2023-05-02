@@ -80,7 +80,7 @@ const char * Form::NullStringException::what() const throw(){
 
 std::ostream& operator<<(std::ostream& os, const Form& form)
 {
-    os << GREEN << "Form: " << form.getName() << ", signed: " << form.getSign() << ", grade required to sign: "
+    os << GREEN << "Form: " << form.getName() << std::boolalpha << ", signed: " << form.getSign() << ", grade required to sign: "
         << form.getSignGrade() << ", grade required to execute: " << form.getExecGrade() << DEFAULT;
     return (os);
 }
