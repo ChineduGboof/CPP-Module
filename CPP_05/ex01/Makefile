@@ -6,7 +6,7 @@
 #    By: gboof <gboof@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 16:43:12 by cegbulef          #+#    #+#              #
-#    Updated: 2023/04/28 14:06:10 by gboof            ###   ########.fr        #
+#    Updated: 2023/05/02 16:06:45 by gboof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ CYAN		=	"\033[3;36m"
 MAGENTA		=	"\033[0;35m"
 
 %.o : %.cpp
-			@printf $(MAGENTA)
+			@echo $(MAGENTA)
 			$(CC) $(FLAGS) -c $< -o $@
 
 all:		$(NAME)

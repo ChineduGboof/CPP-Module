@@ -6,12 +6,18 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 21:01:26 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/28 18:04:33 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/02 16:27:52 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
+
+#define DEFAULT	"\033[0m"
+#define YELLOW 	"\e[0;33m"
+#define GREEN	"\033[1;32m"
+#define CYAN	"\033[0;36m"
+#define RED 	"\e[0;31m"
 
 #include <iostream>
 
@@ -21,7 +27,6 @@ class Bureaucrat{
     private:
         std::string const _name;
         int _grade;
-        Bureaucrat();
     public:
         class GradeTooHighException: public std::exception
         {
@@ -40,6 +45,8 @@ class Bureaucrat{
             public:  
                 virtual const char * what() const throw();
         };
+        
+        Bureaucrat();
         Bureaucrat(Bureaucrat const & other);
         Bureaucrat & operator=(Bureaucrat const & other);
         Bureaucrat(std::string const & name, int grade);

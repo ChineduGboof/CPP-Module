@@ -6,7 +6,7 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 14:06:22 by gboof             #+#    #+#             */
-/*   Updated: 2023/04/28 17:58:41 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/02 16:40:40 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class Form{
         bool _sign;
         int const _signGrade;
         int const _execGrade;
-        Form();
     public: 
     
         class GradeTooHighException: public std::exception
@@ -41,6 +40,7 @@ class Form{
                 virtual const char * what() const throw();
         };
 
+        Form();
         Form(Form const & other);
         Form & operator=(Form const & other);
         Form(std::string const & name, int const signGrade, int const execGrade);
