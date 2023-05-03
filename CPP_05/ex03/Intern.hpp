@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTER_HPP
+#ifndef INTERN_HPP
 #define INTERN_HPP
 
 #define DEFAULT	"\033[0m"
@@ -20,20 +20,23 @@
 #define RED 	"\e[0;31m"
 
 #include <iostream>
+#include "Form.hpp"
 
-class AForm;
-
-class Intern{
+class Intern {
     private:
-        Form *form[3];
+        static Form *newShrubberyCreationForm(std::string const &target);
+        static Form *newRobotomyRequestForm(std::string const &target);
+        static Form *newPresidentialPardonForm(std::string const &target);
+        static Form *(*formCreationFunctions[3])(std::string const &target);
+
     public:
         Intern();
-        Intern(Intern const & other);
-        Intern & operator=(Intern const & other);
+        Intern(const Intern & other);
         ~Intern();
 
-        AForm * makeForm(std::string formName, std::string target);
+        Intern &operator=(const Intern & other);
+
+        AForm *makeForm(std::string const &formName, std::string const &target);
 };
 
-#include "AForm.hpp"
 #endif

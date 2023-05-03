@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 21:01:23 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/03 04:15:15 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/05/03 04:41:53 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-#include "Inten.hpp"
+#include "Intern.hpp"
 
 int main()
 {
