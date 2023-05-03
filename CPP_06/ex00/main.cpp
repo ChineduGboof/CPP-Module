@@ -5,25 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/27 21:01:23 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/03 21:50:31 by gboof            ###   ########.fr       */
+/*   Created: 2023/05/03 22:00:28 by gboof             #+#    #+#             */
+/*   Updated: 2023/05/03 22:34:11 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "Intern.hpp"
+#include <iostream>
+#include "Scalar.hpp"
 
-int main(void)
-{
-        Intern someRandomIntern;
-        AForm *rrf;
-        rrf = someRandomIntern.makeForm("Presidential Pardon", "Chinedu");
-        Bureaucrat b = Bureaucrat("benjamin", 1);
-        b.signAForm(*rrf);
-        b.executeForm(*rrf);
-        delete rrf;
+int main() {
+    std::string input;
+    Converter converter;
+
+    std::cout << "Enter a value to convert: ";
+    std::getline(std::cin, input);
+
+    if (!converter.is_valid(input)) {
+        std::cout << "Invalid input" << std::endl;
+        return 1;
+    }
+
+    converter.print_all_convetions(input);
+
+    return 0;
 }
