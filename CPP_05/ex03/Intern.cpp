@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 04:51:59 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/05/03 09:35:14 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/05/03 10:37:10 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ AForm * Intern::makePresidentialForm(std::string target) {
     return new PresidentialPardonForm(target);
 }
 
-AForm * Intern::makeForm(std::string formName, std::string formTarget){
+AForm * Intern::makeForm(std::string const & formName, std::string const & formTarget){
     std::string forms[3] = { "Shrubbery Creation",
                              "Robotomy Request",
                              "Presidential Pardon"};
