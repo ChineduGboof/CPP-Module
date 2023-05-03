@@ -12,11 +12,6 @@
 
 #include "RobotomyRequestForm.hpp"
 
-/*
-Required grades: sign 72, exec 45
-Makes some drilling noises. Then, informs that <target> has been robotomized
-successfully 50% of the time. Otherwise, informs that the robotomy failed.
-*/
 RobotomyRequestForm::RobotomyRequestForm(): AForm("RobotomyRequestForm", 72, 45), _target("default"){
     std::cout << "RobotomyRequestForm Default Constructor called" << std::endl;
 }
@@ -35,9 +30,8 @@ RobotomyRequestForm::RobotomyRequestForm(std::string const * target)
     }
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & other) {
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & other): AForm(other), _target(other._target) {
          std::cout << "RobotomyRequestForm Copy Constructor called" << std::endl;
-         *this = other;
 }
 
 RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const & other){
