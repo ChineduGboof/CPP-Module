@@ -6,36 +6,57 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 04:51:59 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/05/03 05:00:13 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/05/03 09:35:14 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 
-Form* Intern::makeForm(const std::string& name, const std::string & target) {
-    const char* formNames[] = { "shrubbery request", "robotomy request", "presidential pardon" };
-    Form* (Intern::*formFuncs[])(const std::string&) = { &Intern::makeShrubberyForm, &Intern::makeRobotomyForm, &Intern::makePresidentialForm };
-    int numForms = sizeof(formNames) / sizeof(formNames[0]);
-
-    for (int i = 0; i < numForms; i++) {
-        if (name == formNames[i]) {
-            std::cout << "Intern creates " << name << std::endl;
-            return (this->*formFuncs[i])(target);
-        }
-    }
-
-    std::cout << "Error: Form " << name << " does not exist" << std::endl;
-    return NULL;
+Intern::Intern(){
+    std::cout << "Intern Default Constructor called" << std::endl;
+    this->funcPtr[0] = &Intern::makeShrubberyForm;
+    this->funcPtr[1] = &Intern::makeRobotomyForm;
+    this->funcPtr[2] = &Intern::makePresidentialForm;
 }
 
-Form* Intern::makeShrubberyForm(const std::string & target) {
+Intern::Intern(const Intern & other){
+    std::cout << "Intern Copy Constructor called" << std::endl;
+    *this = other;
+}
+
+Intern & Intern::operator=(const Intern & other){
+    std::cout << "AForm Copy Assignment Constructor called" << std::endl;
+    (void)other;
+    return (*this);
+}
+
+Intern::~Intern(){
+    std::cout << "Intern Destructor called" << std::endl;
+}
+
+AForm * Intern::makeShrubberyForm(std::string target) {
     return new ShrubberyCreationForm(target);
 }
 
-Form* Intern::makeRobotomyForm(const std::string & target) {
+AForm * Intern::makeRobotomyForm(std::string target) {
     return new RobotomyRequestForm(target);
 }
 
-Form* Intern::makePresidentialForm(const std::string & target) {
+AForm * Intern::makePresidentialForm(std::string target) {
     return new PresidentialPardonForm(target);
+}
+
+AForm * Intern::makeForm(std::string formName, std::string formTarget){
+    std::string forms[3] = { "Shrubbery Creation",
+                             "Robotomy Request",
+                             "Presidential Pardon"};
+    
+    for(int i = 0; i < 3; i++) {
+        if (forms[i] == formName){
+            std::cout << GREEN << "Intern creates " << formName << DEFAULT << std::endl;
+            return ((this->*funcPtr[i])(formTarget));
+        }
+    }
+    std::cout << RED << "This Form is Non-Existent" << DEFAULT << std::endl;
+    return (0);
 }

@@ -40,7 +40,7 @@ AForm::AForm(std::string const * name, int const signGrade, int const execGrade)
 
 AForm::AForm(AForm const & other)
     : _name(other._name), _sign(other._sign), _signGrade(other._signGrade), _execGrade(other._execGrade){
-         std::cout << "AForm Copy Constructor called" << std::endl;
+        std::cout << "AForm Copy Constructor called" << std::endl;
     }
 
 AForm & AForm::operator=(AForm const & other){

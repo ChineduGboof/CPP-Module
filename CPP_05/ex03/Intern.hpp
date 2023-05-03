@@ -20,23 +20,24 @@
 #define RED 	"\e[0;31m"
 
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 class Intern {
     private:
-        static Form *newShrubberyCreationForm(std::string const &target);
-        static Form *newRobotomyRequestForm(std::string const &target);
-        static Form *newPresidentialPardonForm(std::string const &target);
-        static Form *(*formCreationFunctions[3])(std::string const &target);
-
+        AForm * (Intern::*funcPtr[3])(std::string target);
+        AForm * makeShrubberyForm(std::string target);
+        AForm * makeRobotomyForm(std::string target);
+        AForm * makePresidentialForm(std::string target);
     public:
         Intern();
         Intern(const Intern & other);
+        Intern &operator=(const Intern & other);
         ~Intern();
 
-        Intern &operator=(const Intern & other);
-
-        AForm *makeForm(std::string const &formName, std::string const &target);
+        AForm * makeForm(std::string formName, std::string formTarget);
 };
 
 #endif
