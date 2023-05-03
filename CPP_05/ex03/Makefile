@@ -6,11 +6,11 @@
 #    By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 16:43:12 by cegbulef          #+#    #+#              #
-#    Updated: 2023/05/03 10:34:06 by cegbulef         ###   ########.fr        #
+#    Updated: 2023/05/03 10:56:51 by cegbulef         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	forms
+NAME		=	intern
 
 SRCS		=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
