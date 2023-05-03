@@ -30,9 +30,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string const * target)
     }
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & other) {
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & other): AForm(other), _target(other._target) {
          std::cout << "ShrubberyCreationForm Copy Constructor called" << std::endl;
-         *this = other;
 }
 
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm const & other){

@@ -12,10 +12,6 @@
 
 #include "PresidentialPardonForm.hpp"
 
-/*
-PresidentialPardonForm: Required grades: sign 25, exec 5
-Informs that <target> has been pardoned by Zaphod Beeblebrox
-*/
 PresidentialPardonForm::PresidentialPardonForm(): AForm("PresidentialPardonForm", 25, 5), _target("default"){
     std::cout << "PresidentialPardonForm Default Constructor called" << std::endl;
 }
@@ -34,9 +30,8 @@ PresidentialPardonForm::PresidentialPardonForm(std::string const * target)
     }
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & other) {
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & other): AForm(other), _target(other._target) {
          std::cout << "PresidentialPardonForm Copy Constructor called" << std::endl;
-         *this = other;
 }
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonForm const & other){
