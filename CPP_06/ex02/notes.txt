@@ -1,0 +1,9 @@
+The exercise involves implementing a Base class with a public virtual destructor 
+and three empty classes A, B, and C, that publicly inherit from Base. 
+The generate() function is implemented to randomly instantiate A, B, or C and 
+returns the instance as a Base pointer. The identify(Base* p) function prints 
+the actual type of the object pointed to by p, either "A", "B", or "C". 
+The identify(Base& p) function also prints the actual type of the object 
+pointed to by p, but using a pointer inside this function is forbidden. 
+The challenge is to implement the identify() functions without using the std::typeinfo header. 
+A program is required to test that everything works as expected.
