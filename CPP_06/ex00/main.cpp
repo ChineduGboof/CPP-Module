@@ -6,7 +6,7 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 22:00:28 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/03 22:34:11 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/04 19:43:26 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int main() {
         return 1;
     }
 
-    converter.print_all_convetions(input);
-
+    converter.display_conversions(input);
     return 0;
 }
