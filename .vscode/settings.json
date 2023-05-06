@@ -68,6 +68,8 @@
         "fstream": "cpp",
         "deque": "cpp",
         "stack": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp"
     }
 }

@@ -6,13 +6,13 @@
 #    By: gboof <gboof@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 16:43:12 by cegbulef          #+#    #+#              #
-#    Updated: 2023/05/04 20:12:48 by gboof            ###   ########.fr        #
+#    Updated: 2023/05/06 23:06:24 by gboof            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	serialize
 
-SRCS		=	main.cpp Serialize.cpp data.cpp
+SRCS		=	main.cpp Serialize.cpp
 
 OBJS		=	$(SRCS:%.cpp=%.o)
 
