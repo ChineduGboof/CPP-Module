@@ -6,32 +6,32 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 21:53:27 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/04 19:55:33 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/06 20:01:12 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Scalar.hpp"
 
-Converter::Converter() {}
+ScalarConverter::ScalarConverter() {}
 
-Converter::Converter(Converter const &other) {
+ScalarConverter::ScalarConverter(ScalarConverter const &other) {
 	*this = other;
 }
 
-Converter &Converter::operator=(Converter const &other) {
+ScalarConverter &ScalarConverter::operator=(ScalarConverter const &other) {
     (void)other;
     return *this;
 }
 
-Converter::~Converter() {}
+ScalarConverter::~ScalarConverter() {}
 
-bool Converter::is_pseudo_literal(std::string & s) {
+bool ScalarConverter::is_pseudo_literal(std::string & s) {
     return s == "nan" || s == "nanf" || s == "+inf" || s == "inf" || s == "-inf"
             || s == "+inff" || s == "inff" || s == "-inff";
 }
 
-void Converter::convert_to_char(std::string &s) {
+void ScalarConverter::convert_to_char(std::string &s) {
     if (is_pseudo_literal(s)) {
         std::cout << "Impossible" << std::endl;
         return ;
@@ -44,7 +44,7 @@ void Converter::convert_to_char(std::string &s) {
     std::cout << c << std::endl;
 }
 
-void Converter::convert_to_int(std::string &s) {
+void ScalarConverter::convert_to_int(std::string &s) {
     if (is_pseudo_literal(s)) {
         std::cout << "Impossible" << std::endl;
         return ;
@@ -57,7 +57,7 @@ void Converter::convert_to_int(std::string &s) {
     }
 }
 
-void Converter::convert_to_float(std::string &s) {
+void ScalarConverter::convert_to_float(std::string &s) {
     char* end;
     float nbr = std::strtof(s.c_str(), &end);
 
@@ -69,7 +69,7 @@ void Converter::convert_to_float(std::string &s) {
     std::cout << nbr << "f" << std::endl;
 }
 
-void Converter::convert_to_double(std::string &s) {
+void ScalarConverter::convert_to_double(std::string &s) {
     char * end;
     double nbr = std::strtod(s.c_str(), &end);
 
@@ -81,14 +81,14 @@ void Converter::convert_to_double(std::string &s) {
     std::cout << nbr << std::endl;
 }
 
-void Converter::display_conversions(std::string &s) {
+void ScalarConverter::convert(std::string &s) {
     std::cout << "char: ", convert_to_char(s);
     std::cout << "int: ", convert_to_int(s);
     std::cout << "float: ", convert_to_float(s);
     std::cout << "double: ", convert_to_double(s);
 }   
 
-bool Converter::is_valid(std::string &s) {
+bool ScalarConverter::is_valid(std::string &s) {
     if (is_pseudo_literal(s))
         return true;
 
