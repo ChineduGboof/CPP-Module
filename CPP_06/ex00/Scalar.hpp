@@ -6,7 +6,7 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 22:02:01 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/06 20:00:47 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/07 06:16:36 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+
+#define DEFAULT	"\033[0m"
+#define YELLOW 	"\e[0;33m"
+#define GREEN	"\033[1;32m"
+#define CYAN	"\033[0;36m"
+#define RED 	"\e[0;31m"
 
 class ScalarConverter {
     private:

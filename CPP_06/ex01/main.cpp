@@ -6,7 +6,7 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 20:08:55 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/06 23:05:19 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/07 06:20:24 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ int main()
     std::cout << "Deserialized data: " << deserialized->a << ", " << deserialized->b << ", " << deserialized->c << std::endl;
 
     if (deserialized == &data) {
-        std::cout << "Pointer comparison successful" << std::endl;
-        std::cout <<  deserialized <<  std::endl;
-        std::cout <<  &data <<  std::endl;
-        std::cout <<  data.a <<  std::endl;
+        std::cout << GREEN << "Pointer comparison successful" << DEFAULT << std::endl;
+        std::cout << GREEN << deserialized << std::endl;
+        std::cout << &data <<  DEFAULT << std::endl;
+        std::cout <<  YELLOW << data.a <<  std::endl;
         std::cout <<  data.b <<  std::endl;
-        std::cout <<  data.c <<  std::endl;
+        std::cout <<  data.c <<  DEFAULT << std::endl;
     } else {
-        std::cout << "Pointer comparison failed" << std::endl;
+        std::cout << RED << "Pointer comparison failed" << DEFAULT << std::endl;
     }
 
     return 0;

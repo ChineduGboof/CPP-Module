@@ -6,7 +6,7 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 21:53:27 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/06 20:01:12 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/07 06:26:55 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,27 +33,27 @@ bool ScalarConverter::is_pseudo_literal(std::string & s) {
 
 void ScalarConverter::convert_to_char(std::string &s) {
     if (is_pseudo_literal(s)) {
-        std::cout << "Impossible" << std::endl;
+        std::cout << RED << "Impossible" << DEFAULT << std::endl;
         return ;
     }
     char c = static_cast<char>(atoi(s.c_str()));
     if (!std::isprint(c)) {
-        std::cout << "Non displayable" << std::endl;
+        std::cout << RED << "Non displayable" << DEFAULT << std::endl;
         return ;
     }
-    std::cout << c << std::endl;
+    std::cout << GREEN << c << DEFAULT << std::endl;
 }
 
 void ScalarConverter::convert_to_int(std::string &s) {
     if (is_pseudo_literal(s)) {
-        std::cout << "Impossible" << std::endl;
+        std::cout << RED << "Impossible" << DEFAULT << std::endl;
         return ;
     }
     long long value = std::atoll(s.c_str());
     if (value > INT_MAX || value < INT_MIN) {
-        std::cout << "impossible" << std::endl;
+        std::cout << RED << "Impossible" << DEFAULT << std::endl;
     } else {
-        std::cout << static_cast<int>(value) << std::endl;
+        std::cout << GREEN << static_cast<int>(value) << DEFAULT << std::endl;
     }
 }
 
@@ -63,10 +63,10 @@ void ScalarConverter::convert_to_float(std::string &s) {
 
     //  check if the float value has no decimal part.
     if (*end == '\0' && nbr - static_cast<int>(nbr) == 0) {
-        std::cout << nbr << ".0f" << std::endl;
+        std::cout << GREEN << nbr << ".0f" << DEFAULT << std::endl;
         return ;
     }
-    std::cout << nbr << "f" << std::endl;
+    std::cout << GREEN << nbr << "f" << DEFAULT << std::endl;
 }
 
 void ScalarConverter::convert_to_double(std::string &s) {
@@ -75,10 +75,10 @@ void ScalarConverter::convert_to_double(std::string &s) {
 
     //  check if the double value has no decimal part.
     if (*end == '\0' && nbr - static_cast<int>(nbr) == 0) {
-        std::cout << nbr << ".0" << std::endl;
+        std::cout << GREEN << nbr << ".0" << DEFAULT << std::endl;
         return ;
     }
-    std::cout << nbr << std::endl;
+    std::cout << GREEN << nbr << DEFAULT << std::endl;
 }
 
 void ScalarConverter::convert(std::string &s) {
