@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 08:44:49 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/07 08:50:08 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/07 10:23:32 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,49 +35,40 @@ Base *generate(void)
 void identify(Base *p)
 {
     const A *aPtr = dynamic_cast<A *>(p);
-    if (aPtr)
-    {
-        std::cout << "Pointer identified as A" << std::endl;
+    if (aPtr){
+        std::cout << GREEN << "Pointer A" << DEFAULT << std::endl;
         return;
     }
     const B *bPtr = dynamic_cast<B *>(p);
-    if (bPtr)
-    {
-        std::cout << "Pointer identified as B" << std::endl;
+    if (bPtr) {
+        std::cout << GREEN << "Pointer B" << DEFAULT << std::endl;
         return;
     }
     const C *cPtr = dynamic_cast<C *>(p);
-    if (cPtr)
-    {
-        std::cout << "Pointer identified as C" << std::endl;
+    if (cPtr) {
+        std::cout << GREEN << "Pointer C" << DEFAULT << std::endl;
         return;
     }
 }
 
 void identify(Base &p)
 {
-    try
-    {
+    try {
         (void)dynamic_cast<A &>(p);
-        std::cout << "Reference identified as A" << std::endl;
+        std::cout << GREEN << "Reference A" << DEFAULT << std::endl;
     }
-    catch (const std::exception &e)
-    {
+    catch (const std::exception &e){
     }
-    try
-    {
+    try {
         (void)dynamic_cast<B &>(p);
-        std::cout << "Reference identified as B" << std::endl;
+        std::cout << GREEN << "Reference B" << DEFAULT << std::endl;
     }
-    catch (const std::exception &e)
-    {
+    catch (const std::exception &e){
     }
-    try
-    {
+    try {
         (void)dynamic_cast<C &>(p);
-        std::cout << "Reference identified as C" << std::endl;
+        std::cout << GREEN << "Reference C" << DEFAULT << std::endl;
     }
-    catch (const std::exception &e)
-    {
+    catch (const std::exception &e){
     }
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Scalar.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 21:53:27 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/07 06:26:55 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/07 10:10:39 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,9 @@ bool ScalarConverter::is_valid(std::string &s) {
 
     // if s is a character, convert it to its ascii value
     if (s.length() == 1 && isalpha(s[0])) {
-        s = std::to_string(static_cast<int>(s[0]));
+        std::stringstream ss;
+        ss << static_cast<int>(s[0]);
+        s = ss.str();
         return true;
     }
 
@@ -106,9 +108,9 @@ bool ScalarConverter::is_valid(std::string &s) {
             return false;
         }
     }
-
     return true;
 }
+
 
 
 /*

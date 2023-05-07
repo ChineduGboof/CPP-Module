@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gboof <gboof@student.42.fr>                +#+  +:+       +#+         #
+#    By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/18 16:43:12 by cegbulef          #+#    #+#              #
-#    Updated: 2023/05/04 20:30:43 by gboof            ###   ########.fr        #
+#    Updated: 2023/05/07 10:20:08 by cegbulef         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	serialize
 
-SRCS		=	main.cpp Base.hpp A.hpp 
+SRCS		=	main.cpp Base.cpp
 
 OBJS		=	$(SRCS:%.cpp=%.o)
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Scalar.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 22:02:01 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/07 06:16:36 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/07 10:13:06 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <climits>
+#include <sstream>
 
 #define DEFAULT	"\033[0m"
 #define YELLOW 	"\e[0;33m"
