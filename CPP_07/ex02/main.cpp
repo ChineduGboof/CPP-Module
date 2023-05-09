@@ -6,85 +6,65 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:41:30 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/09 07:45:03 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/09 09:01:59 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
-/*
-checks: 
-1. check if one passes a negative number
-2. Check if a null is passed
-3. Check if a more than max int is passed
 
-*/
-int main(void)
-{
-    // Integer test
-    Array<int> ints(10);
-    ints[0] = 1;
-    ints[1] = 2;
-    ints[2] = 3;
-    ints[3] = 4;
-    ints[4] = 5;
-    ints[5] = 6;
-    std::cout << ints[0] << std::endl
-              << ints[1] << std::endl
-              << ints[2] << std::endl
-              << ints[3] << std::endl
-              << ints[4] << std::endl
-              << ints[5] << std::endl;
 
-    // String test
-    Array<std::string> strs(4);
-    strs[0] = "Oh";
-    strs[1] = "Hi";
-    strs[2] = "Mark";
-    std::cout << strs[0] << std::endl << strs[1] << std::endl << strs[2] << std::endl;
-
-    // Copy constructor test
-    Array<std::string> strCopy(strs);
-    strCopy[1] = "Hello";
-    std::cout << "Printing original" << std::endl;
-    std::cout << strs[0] << std::endl << strs[1] << std::endl << strs[2] << std::endl;
-    std::cout << "Printing copy" << std::endl;
-    std::cout << strCopy[0] << std::endl
-              << strCopy[1] << std::endl
-              << strCopy[2] << std::endl;
-
-    // Copy assignment constructor test
-    Array<std::string> strCopy2;
-    strCopy2 = strs;
-    strCopy2[1] = "Hello";
-    std::cout << "Printing original" << std::endl;
-    std::cout << strs[0] << std::endl << strs[1] << std::endl << strs[2] << std::endl;
-    std::cout << "Printing copy" << std::endl;
-    std::cout << strCopy2[0] << std::endl
-              << strCopy2[1] << std::endl
-              << strCopy2[2] << std::endl;
-
-    // Empty array test
-    Array<std::string> empty;
-    try
-    {
-        empty[0];
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << e.what() << '\n';
+int main() {
+    // Create an array of integers
+    Array<int> arr(6);
+    for (unsigned int i = 0; i < arr.size(); i++) {
+        arr[i] = i;
     }
 
-    // Out of bounds access test
-    // try
-    // {
-    //     strCopy[4];
-    // }
-    // catch (const std::exception &e)
-    // {
-    //     std::cerr << e.what() << '\n';
-    // }
-    // const Array<int> a(3);
+    // Print the elements of the array
+    std::cout << YELLOW << "Test 1" << DEFAULT << std::endl;
+    for (unsigned int i = 0; i < arr.size(); i++) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
 
-    // a[0] = 3;
-    // std::cout << a[0] << std::endl;
+    // Copy the array
+    Array<int> arr2 = arr;
+
+    // Change the first element of arr
+    arr[0] = 10;
+
+    // Print the elements of arr and arr2
+    std::cout << YELLOW << "DEEP COPY TEST" << DEFAULT << std::endl;
+    std::cout << GREEN << "arr: " << DEFAULT;
+    for (unsigned int i = 0; i < arr.size(); i++) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+    std::cout << GREEN << "arr2: " << DEFAULT;
+    for (unsigned int i = 0; i < arr2.size(); i++) {
+        std::cout << arr2[i] << " ";
+    }
+    std::cout << std::endl;
+
+    // Access out-of-bounds index
+    std::cout << YELLOW << "OUT OF BOUNDS TEST" << DEFAULT << std::endl;
+    try {
+        std::cout << arr[0] << std::endl;
+    }
+    catch (std::out_of_range const & e) {
+        std::cerr << RED << "Error: " << e.what() << DEFAULT << std::endl;
+    }
+
+    // Test empty array
+    Array<int> arr1;
+    std::cout << YELLOW << "EMPTY ARRAY TEST" << DEFAULT << std::endl;
+    std::cout << GREEN << "Size of arr1: " << arr1.size() << DEFAULT << std::endl;
+    try {
+        std::cout << arr1[0] << std::endl; // Should throw out_of_range exception
+    }
+    catch (std::out_of_range const& e) {
+        std::cerr << RED << e.what() << DEFAULT << std::endl;
+    }
+
+    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:41:34 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/09 07:46:38 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/09 08:21:38 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,22 @@ std::exception is thrown.
 • A member function size() that returns the number of elements in the array. This
 member function takes no parameter and musn’t modify the current instance.
 */
+// class Array {
+//     private:
+//         int* _arr;
+//         unsigned int _size;
+
+//     public:
+//         Array();
+//         Array(unsigned int n);
+//         Array(Array const & other);
+//         Array const & operator=(Array const & other);
+//         ~Array();
+
+//         int & operator[]( unsigned int const index);
+//         int const & operator[]( unsigned int const index)const;
+//         unsigned int size()const;
+// };
 
 template<typename T>
 class Array{
@@ -55,6 +71,24 @@ class Array{
         T const & operator[]( unsigned int const index)const;
         unsigned int size()const;
 };
+
+// template<typename T, unsigned int U>
+// class Array{
+//     private:
+//         T * _arr;
+//         unsigned int _size;
+
+//     public:
+//         Array();
+//         Array(U n);
+//         Array(Array const & other);
+//         Array const & operator=(Array const & other);
+//         ~Array();
+
+//         T & operator[]( U const index);
+//         T const & operator[]( U const index)const;
+//         U size()const;
+// };
 
 #include "Array.tpp"
 

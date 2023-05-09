@@ -6,7 +6,7 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 06:02:10 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/09 07:42:29 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/09 08:40:55 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ std::exception is thrown.
 
 template<typename T>
 T & Array<T>::operator[](unsigned int const index) {
-    if (index >= _size) {
+    if (index < 0 || index >= _size) {
         throw std::out_of_range("Index is beyond boundaries");
     }
     return _arr[index];
@@ -85,7 +85,7 @@ T & Array<T>::operator[](unsigned int const index) {
 
 template<typename T>
 T const & Array<T>::operator[](unsigned int const index)const {
-    if (index >= _size) {
+    if (index < 0 || index >= _size) {
         throw std::out_of_range("Index is beyond boundaries");
     }
     return _arr[index];
