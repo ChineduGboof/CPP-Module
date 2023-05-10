@@ -71,6 +71,7 @@
         "complex": "cpp",
         "compare": "cpp",
         "concepts": "cpp",
-        "*.tpp": "cpp"
+        "*.tpp": "cpp",
+        "list": "cpp"
     }
 }

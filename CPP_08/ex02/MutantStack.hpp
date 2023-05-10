@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.tpp                                       :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 10:34:38 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/10 12:39:21 by gboof            ###   ########.fr       */
+/*   Created: 2023/05/10 15:55:37 by gboof             #+#    #+#             */
+/*   Updated: 2023/05/10 15:56:55 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
+#ifndef MUTANTSTACK_HPP
+#define MUTANTSTACK_HPP
 
-#ifndef EASYFIND_TPP
-#define EASYFIND_TPP
+#define DEFAULT		"\033[0m"
+#define RED			"\033[0;31m"
+#define GREEN		"\033[0;32m"
+#define YELLOW		"\033[0;33m"
 
-//checks the container for the value and returns -1 if not found
-//returns the index if found
-
-
-template<typename T>
-int easyfind(T & container, int value){
-    typename T::iterator it = std::find(container.begin(), container.end(), value);
-    if (it == container.end())
-        return (-1);
-    return (std::distance(container.begin(), it));
-}
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <array>
 
 
 #endif
