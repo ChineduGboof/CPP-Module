@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 15:55:42 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/11 09:47:52 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/11 10:47:32 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 //     MutantStack<int> mstack;
 //     mstack.push(5);
 //     mstack.push(17);
-//     std::cout << mstack.top() << std::endl;
+//     std::cout << GREEN << mstack.top() << std::endl;
 //     mstack.pop();
 //     std::cout << mstack.size() << std::endl;
 //     mstack.push(3);
@@ -43,7 +43,7 @@ int main() {
     MutantStack<int> mstack;
     mstack.push(5);
     mstack.push(17);
-    std::cout << "MutantStack Top: " << mstack.top() << std::endl;
+    std::cout << GREEN << "MutantStack Top: " << mstack.top() << std::endl;
     mstack.pop();
     std::cout << "MutantStack Size: " << mstack.size() << std::endl;
     mstack.push(3);
@@ -78,7 +78,7 @@ int main() {
         std::cout << *lit << " ";
         ++lit;
     }
-    std::cout << std::endl;
+    std::cout << DEFAULT << std::endl;
 
     std::stack<int, std::list<int> > s(lstack);
     return 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 11:35:48 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/10 15:57:10 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/11 10:44:15 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <array>
+#include <climits>
 
 class Span {
     private:

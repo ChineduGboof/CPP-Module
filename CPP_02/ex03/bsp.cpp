@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 18:57:11 by cegbulef          #+#    #+#             */
-/*   Updated: 2023/04/21 09:04:27 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/11 17:17:32 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,8 @@ bool bsp(Point const a, Point const b, Point const c, Point const pt) {
     Fixed s1 = sign(pt, a, b);
     Fixed s2 = sign(pt, b, c);
     Fixed s3 = sign(pt, c, a);
-    return (s1 >= 0 && s2 >= 0 && s3 >= 0) || (s1 <= 0 && s2 <= 0 && s3 <= 0);
+    return (s1 > 0 && s2 > 0 && s3 > 0) || (s1 < 0 && s2 < 0 && s3 < 0);
 }
-
 
 /*
 BSP stands for Binary Space Partitioning, 

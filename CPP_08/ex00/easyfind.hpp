@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 10:05:37 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/10 11:08:15 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/11 10:42:54 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <array>
 
 
 template<typename T>

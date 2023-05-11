@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:25:45 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/08 20:20:15 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/09 10:42:51 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,12 @@ int main()
 {
     std::string arr[] = {"Hello", "World", "Jesus", "is", "coming"};
     int arr2[] = {1900, 1910, 1920, 1930};
-    float arr3[] = {1900.2, 1910.5, 1920.8, 1930.4};
 
     size_t arrlen = sizeof(arr) / sizeof(arr[0]);
     size_t arrlen2 = sizeof(arr2) / sizeof(arr2[0]);
-    size_t arrlen3 = sizeof(arr3) / sizeof(arr3[0]);
 
     ::iter(arr, arrlen, print);
     ::iter(arr2, arrlen2, print);
-    ::iter(arr3, arrlen3, print);
     return 0;
 }
 

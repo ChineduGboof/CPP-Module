@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 06:02:10 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/09 08:40:55 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/09 11:04:00 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,16 @@
 #ifndef ARRAY_TPP
 #define ARRAY_TPP
 
-/*
-Construction with no parameter: Creates an empty array.
-*/
-
 template<typename T>
 Array<T>::Array() : _arr(NULL), _size(0) {}
 
-/*
-• Construction with an unsigned int n as a parameter: Creates an array of n elements
-initialized by default.
-*/
-
 template<typename T>
-Array<T>::Array(unsigned int n): _arr(new T[n]), _size(n) {}
-
-/*
-• Construction by copy and assignment operator. In both cases, modifying either the
-original array or its copy after copying musn’t affect the other array.
-*/
+Array<T>::Array(unsigned int n): _arr(NULL), _size(n) {
+    _arr = new T[n];
+    if (_arr == NULL) {
+        throw std::bad_alloc();
+    }
+}
 
 template<typename T>
 Array<T>::Array(Array const & other) : _arr(NULL), _size(other.size()) {
@@ -66,15 +57,6 @@ Array<T> const & Array<T>::operator=(Array const & other) {
 template<typename T>
 Array<T>::~Array(){ delete[] _arr; }
 
-/*
-• You MUST use the operator new[] to allocate memory. 
-Preventive allocation (allocating memory in advance) is forbidden. 
-Your program must never access nonallocated memory.
-• Elements can be accessed through the subscript operator: [ ].
-• When accessing an element with the [ ] operator, if its index is out of bounds, an
-std::exception is thrown.
-*/
-
 template<typename T>
 T & Array<T>::operator[](unsigned int const index) {
     if (index < 0 || index >= _size) {
@@ -90,11 +72,6 @@ T const & Array<T>::operator[](unsigned int const index)const {
     }
     return _arr[index];
 }
-
-/*
-• A member function size() that returns the number of elements in the array. This
-member function takes no parameter and musn’t modify the current instance.
-*/
 
 template<typename T>
 unsigned int Array<T>::size()const{ return (_size); }
