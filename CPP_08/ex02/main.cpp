@@ -6,12 +6,12 @@
 /*   By: gboof <gboof@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 15:55:42 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/10 18:57:40 by gboof            ###   ########.fr       */
+/*   Updated: 2023/05/11 09:47:52 by gboof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
-#include <list>
+
 
 // int main()
 // {
@@ -32,8 +32,8 @@
 //     --it;
 //     while (it != ite)
 //     {
-//     std::cout << *it << std::endl;
-//     ++it;
+//         std::cout << *it << std::endl;
+//         ++it;
 //     }
 //     std::stack<int> s(mstack);
 //     return (0);
