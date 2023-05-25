@@ -6,7 +6,7 @@
 /*   By: cegbulef <cegbulef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 18:41:30 by gboof             #+#    #+#             */
-/*   Updated: 2023/05/09 10:29:48 by cegbulef         ###   ########.fr       */
+/*   Updated: 2023/05/14 16:36:42 by cegbulef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int main() {
 
     // Access out-of-bounds index
     std::cout << YELLOW << "OUT OF BOUNDS TEST" << DEFAULT << std::endl;
-    std::cout << arr[0] << std::endl;
+    std::cout << arr[7] << std::endl;
     // Test empty array
     Array<int> arr1;
     std::cout << YELLOW << "EMPTY ARRAY TEST" << DEFAULT << std::endl;
